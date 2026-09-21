@@ -1,0 +1,31 @@
+{
+  "id": "clinic_heavy_ja",
+  "situation": "clinic",
+  "level": "heavy",
+  "language": "ja",
+  "script": "japanese",
+  "sample": true,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "I have a pain here, in my stomach. Since yesterday."
+    },
+    {
+      "speaker": "navi",
+      "text": "わかりました、教えてくれてありがとうございます。痛みは鋭い感じですか、それとも dull ache のような感じですか？"
+    },
+    {
+      "speaker": "learner",
+      "text": "Is it serious? What should I do?"
+    },
+    {
+      "speaker": "navi",
+      "text": "たぶん深刻ではないですが、確認したいです。水を飲んで、休んで、come back if the pain gets worse or you get a fever."
+    }
+  ],
+  "target_term": "dull ache",
+  "mix_ratio": null,
+  "generated_with": "hand-written sample, replace with NAVI output",
+  "verified_by": null,
+  "verified_on": null
+}

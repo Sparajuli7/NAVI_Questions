@@ -1,0 +1,31 @@
+{
+  "id": "smalltalk_light_ne",
+  "situation": "smalltalk",
+  "level": "light",
+  "language": "ne",
+  "script": "devanagari",
+  "sample": true,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "It is really cold today."
+    },
+    {
+      "speaker": "navi",
+      "text": "I know, right? म त यसको लागि तयार नै थिइनँ। Did you just move here?"
+    },
+    {
+      "speaker": "learner",
+      "text": "Is it always like this here?"
+    },
+    {
+      "speaker": "navi",
+      "text": "Honestly, यो त केही पनि होइन। Wait until January. You will want a real winter coat."
+    }
+  ],
+  "target_term": "I know, right?",
+  "mix_ratio": null,
+  "generated_with": "hand-written sample, replace with NAVI output",
+  "verified_by": null,
+  "verified_on": null
+}

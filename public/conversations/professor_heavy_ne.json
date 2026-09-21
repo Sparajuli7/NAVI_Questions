@@ -1,0 +1,31 @@
+{
+  "id": "professor_heavy_ne",
+  "situation": "professor",
+  "level": "heavy",
+  "language": "ne",
+  "script": "devanagari",
+  "sample": true,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "Excuse me, do you have a minute? I did not understand the part about the deadline."
+    },
+    {
+      "speaker": "navi",
+      "text": "पक्कै पनि। पेपर शुक्रबार मध्यरातसम्म बुझाउनुपर्छ, but you can ask for an extension चाहिएमा।"
+    },
+    {
+      "speaker": "learner",
+      "text": "So can I submit it on Monday?"
+    },
+    {
+      "speaker": "navi",
+      "text": "शुक्रबार अघि मलाई email गरेर ask for an extension गर्नुहोस्। कारण बताउनुभयो भने म प्रायः हुन्छ भन्छु।"
+    }
+  ],
+  "target_term": "extension",
+  "mix_ratio": null,
+  "generated_with": "hand-written sample, replace with NAVI output",
+  "verified_by": null,
+  "verified_on": null
+}

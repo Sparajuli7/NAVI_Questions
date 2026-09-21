@@ -1,0 +1,31 @@
+{
+  "id": "smalltalk_light_ja",
+  "situation": "smalltalk",
+  "level": "light",
+  "language": "ja",
+  "script": "japanese",
+  "sample": true,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "It is really cold today."
+    },
+    {
+      "speaker": "navi",
+      "text": "I know, right? 全然準備してなかった。Did you just move here?"
+    },
+    {
+      "speaker": "learner",
+      "text": "Is it always like this here?"
+    },
+    {
+      "speaker": "navi",
+      "text": "Honestly, これはまだ全然。Wait until January. You will want a real winter coat."
+    }
+  ],
+  "target_term": "I know, right?",
+  "mix_ratio": null,
+  "generated_with": "hand-written sample, replace with NAVI output",
+  "verified_by": null,
+  "verified_on": null
+}

@@ -1,0 +1,31 @@
+{
+  "id": "professor_heavy_zh",
+  "situation": "professor",
+  "level": "heavy",
+  "language": "zh",
+  "script": "simplified",
+  "sample": true,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "Excuse me, do you have a minute? I did not understand the part about the deadline."
+    },
+    {
+      "speaker": "navi",
+      "text": "当然。论文周五午夜截止，but you can ask for an extension，如果你需要的话。"
+    },
+    {
+      "speaker": "learner",
+      "text": "So can I submit it on Monday?"
+    },
+    {
+      "speaker": "navi",
+      "text": "只要你周五之前给我发邮件 and ask for an extension 就行。说明一下原因，我一般都会同意。"
+    }
+  ],
+  "target_term": "extension",
+  "mix_ratio": null,
+  "generated_with": "hand-written sample, replace with NAVI output",
+  "verified_by": null,
+  "verified_on": null
+}

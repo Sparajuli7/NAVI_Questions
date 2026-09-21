@@ -1,0 +1,31 @@
+{
+  "id": "clinic_none_en",
+  "situation": "clinic",
+  "level": "none",
+  "language": "en",
+  "script": "latin",
+  "sample": true,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "I have a pain here, in my stomach. Since yesterday."
+    },
+    {
+      "speaker": "navi",
+      "text": "Okay, thank you for telling me. Is the pain sharp, or more like a dull ache?"
+    },
+    {
+      "speaker": "learner",
+      "text": "Is it serious? What should I do?"
+    },
+    {
+      "speaker": "navi",
+      "text": "It is probably not serious, but I want to check. Drink water, rest, and come back if the pain gets worse or you get a fever."
+    }
+  ],
+  "target_term": "dull ache",
+  "mix_ratio": null,
+  "generated_with": "hand-written sample, replace with NAVI output",
+  "verified_by": null,
+  "verified_on": null
+}

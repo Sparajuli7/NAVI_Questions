@@ -1,0 +1,31 @@
+{
+  "id": "professor_light_fr",
+  "situation": "professor",
+  "level": "light",
+  "language": "fr",
+  "script": "latin",
+  "sample": true,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "Excuse me, do you have a minute? I did not understand the part about the deadline."
+    },
+    {
+      "speaker": "navi",
+      "text": "Of course. The paper is due Friday à minuit, but you can ask for an extension if you need one."
+    },
+    {
+      "speaker": "learner",
+      "text": "So can I submit it on Monday?"
+    },
+    {
+      "speaker": "navi",
+      "text": "Only if you email me avant vendredi and ask for an extension. Just explain why, and I will usually say yes."
+    }
+  ],
+  "target_term": "extension",
+  "mix_ratio": null,
+  "generated_with": "hand-written sample, replace with NAVI output",
+  "verified_by": null,
+  "verified_on": null
+}

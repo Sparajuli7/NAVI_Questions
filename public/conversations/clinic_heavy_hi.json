@@ -1,0 +1,31 @@
+{
+  "id": "clinic_heavy_hi",
+  "situation": "clinic",
+  "level": "heavy",
+  "language": "hi",
+  "script": "devanagari",
+  "sample": true,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "I have a pain here, in my stomach. Since yesterday."
+    },
+    {
+      "speaker": "navi",
+      "text": "ठीक है, बताने के लिए शुक्रिया। दर्द तेज़ चुभने वाला है, या ज़्यादा dull ache जैसा?"
+    },
+    {
+      "speaker": "learner",
+      "text": "Is it serious? What should I do?"
+    },
+    {
+      "speaker": "navi",
+      "text": "शायद कुछ गंभीर नहीं है, लेकिन मैं एक बार देखना चाहता हूँ। पानी पीजिए, आराम कीजिए, and come back if the pain gets worse or you get a fever."
+    }
+  ],
+  "target_term": "dull ache",
+  "mix_ratio": null,
+  "generated_with": "hand-written sample, replace with NAVI output",
+  "verified_by": null,
+  "verified_on": null
+}

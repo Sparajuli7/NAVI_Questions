@@ -1,0 +1,31 @@
+{
+  "id": "ordering_heavy_hi",
+  "situation": "ordering",
+  "level": "heavy",
+  "language": "hi",
+  "script": "devanagari",
+  "sample": true,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "Hi, can I get the chicken sandwich?"
+    },
+    {
+      "speaker": "navi",
+      "text": "ज़रूर। क्या आप इसे combo में लेना चाहेंगे, फ्राइज़ और ड्रिंक के साथ?"
+    },
+    {
+      "speaker": "learner",
+      "text": "What is a combo?"
+    },
+    {
+      "speaker": "navi",
+      "text": "Combo का मतलब है सैंडविच, फ्राइज़ और ड्रिंक एक साथ, एक ही दाम में। Usually it is cheaper."
+    }
+  ],
+  "target_term": "combo",
+  "mix_ratio": null,
+  "generated_with": "hand-written sample, replace with NAVI output",
+  "verified_by": null,
+  "verified_on": null
+}

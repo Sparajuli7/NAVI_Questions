@@ -1,0 +1,31 @@
+{
+  "id": "ordering_heavy_ko",
+  "situation": "ordering",
+  "level": "heavy",
+  "language": "ko",
+  "script": "hangul",
+  "sample": true,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "Hi, can I get the chicken sandwich?"
+    },
+    {
+      "speaker": "navi",
+      "text": "네. combo로 하시겠어요? 감자튀김이랑 음료가 같이 나와요."
+    },
+    {
+      "speaker": "learner",
+      "text": "What is a combo?"
+    },
+    {
+      "speaker": "navi",
+      "text": "Combo는 샌드위치, 감자튀김, 음료를 한 가격에 같이 주는 거예요. Usually it is cheaper."
+    }
+  ],
+  "target_term": "combo",
+  "mix_ratio": null,
+  "generated_with": "hand-written sample, replace with NAVI output",
+  "verified_by": null,
+  "verified_on": null
+}

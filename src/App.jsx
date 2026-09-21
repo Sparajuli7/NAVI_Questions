@@ -1,108 +1,218 @@
-import { useState, useEffect } from 'react'
-import { BLOCKS, SITUATIONS } from './data/questions.js'
-import ModeSelect from './components/ModeSelect.jsx'
-import FormBlock from './components/FormBlock.jsx'
-import BatteryBlock from './components/battery/BatteryBlock.jsx'
-import Results from './components/Results.jsx'
-import ExitScreen from './components/ExitScreen.jsx'
-import ProgressRail from './components/ProgressRail.jsx'
-import { startSession, saveAnswer, completeSession, saveContact } from './lib/recording.js'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import { PAGES, SITUATIONS } from './data/questions'
+import { buildSteps, gateFor, newSituationOrder, planNavi } from './lib/flow'
+import { loadManifest } from './lib/conversations'
+import { participantIdentity, splitPayload, submit, RECORDING } from './lib/recording'
+import { Progress } from './components/Controls'
+import Question from './components/Question'
+import ConsentText from './components/ConsentText'
+import SituationPage from './components/SituationPage'
+import NaviPage from './components/NaviPage'
+import EndPage from './components/EndPage'
 
-function shuffle(arr) {
-  const a = [...arr]
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[a[i], a[j]] = [a[j], a[i]]
+function visibleQuestions(pageKey, answers) {
+  return PAGES[pageKey].questions.filter((q) => !q.showIf || q.showIf(answers))
+}
+
+/** Drop answers to questions that ended up hidden, e.g. an email after "No". */
+function pruneHidden(answers) {
+  const out = { ...answers }
+  for (const page of Object.values(PAGES)) {
+    for (const q of page.questions) {
+      if (q.showIf && !q.showIf(answers)) delete out[q.id]
+    }
   }
-  return a
+  return out
 }
 
 export default function App() {
-  const [phase, setPhase] = useState('start')
-  const [mode, setMode] = useState('deck')
-  const [flavour, setFlavour] = useState('en')
-  const [blockIndex, setBlockIndex] = useState(0)
+  const [situationOrder] = useState(newSituationOrder)
+  const [identity] = useState(participantIdentity)
+  const [startedAt] = useState(() => new Date())
+  const [manifest, setManifest] = useState(null)
+  const [naviPlan, setNaviPlan] = useState([])
+  const [naviLang, setNaviLang] = useState(null)
+  const [index, setIndex] = useState(0)
   const [answers, setAnswers] = useState({})
-  const [ratings, setRatings] = useState({})
-  const [situationOrder, setSituationOrder] = useState([])
-  const [currentTheme, setCurrentTheme] = useState('')
+  const [ended, setEnded] = useState(null)
+  const [response, setResponse] = useState(null)
+  const [missing, setMissing] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const topRef = useRef(null)
 
-  // Sync theme to <html> so body background and root-level vars react
   useEffect(() => {
-    if (currentTheme) {
-      document.documentElement.setAttribute('data-theme', currentTheme)
-    } else {
-      document.documentElement.removeAttribute('data-theme')
-    }
-  }, [currentTheme])
+    loadManifest().then(setManifest)
+  }, [])
 
-  // Clear theme when leaving battery
-  useEffect(() => {
-    if (phase !== 'survey') setCurrentTheme('')
-  }, [phase])
+  const steps = useMemo(() => buildSteps(situationOrder, naviPlan), [situationOrder, naviPlan])
+  const step = steps[index]
 
-  function handleStart({ mode: m, flavour: f }) {
-    const order = shuffle(SITUATIONS)
-    setMode(m); setFlavour(f); setSituationOrder(order)
-    setBlockIndex(0); setPhase('survey')
-    startSession({ mode: m, flavour: f, situationOrder: order.map(s => s.id) })
+  const situationCount = situationOrder.length
+  const naviCount = naviPlan.length
+
+  const setAnswer = (id, v) => {
+    setMissing(false)
+    setAnswers((a) => {
+      const next = { ...a }
+      if (v === undefined || v === '') delete next[id]
+      else next[id] = v
+      return next
+    })
   }
 
-  function handleBlockComplete(blockAnswers, shouldExit) {
-    if (shouldExit) { setPhase('exited'); return }
-    const newAnswers = { ...answers, ...blockAnswers }
-    setAnswers(newAnswers)
-    const block = BLOCKS[blockIndex]
-    if (block.id === 'contact') {
-      const email = blockAnswers['contact_email']
-      const iOk = blockAnswers['interview_ok'] === 'yes'
-      const rOk = blockAnswers['raffle_ok'] === 'yes'
-      if (email && (iOk || rOk)) saveContact({ email, interviewOk: iOk, raffleOk: rOk })
-      completeSession()
-      setPhase('results')
-      return
-    }
-    Object.entries(blockAnswers).forEach(([qid, val]) => saveAnswer(qid, val))
-    const next = blockIndex + 1
-    if (next >= BLOCKS.length) { completeSession(); setPhase('results') }
-    else setBlockIndex(next)
+  const scrollTop = () => {
+    topRef.current?.scrollIntoView({ block: 'start' })
+    window.scrollTo(0, 0)
   }
 
-  function handleBatteryComplete(newRatings) {
-    setCurrentTheme('')
-    setRatings(newRatings)
-    Object.entries(newRatings).forEach(([sid, dims]) =>
-      Object.entries(dims).forEach(([dk, v]) => saveAnswer(`${sid}.${dk}`, v))
-    )
-    const next = blockIndex + 1
-    if (next >= BLOCKS.length) { completeSession(); setPhase('results') }
-    else setBlockIndex(next)
-  }
-
-  if (phase === 'start') return <ModeSelect onStart={handleStart} />
-  if (phase === 'exited') return <ExitScreen />
-  if (phase === 'results') return <Results ratings={ratings} answers={answers} mode={mode} flavour={flavour} situationOrder={situationOrder} />
-
-  const block = BLOCKS[blockIndex]
-  return (
-    <div style={{ minHeight: '100dvh', display: 'flex', flexDirection: 'column' }}>
-      <ProgressRail value={blockIndex} max={BLOCKS.length} />
-      {block.id === 'situations'
-        ? <BatteryBlock
-            mode={mode}
-            situationOrder={situationOrder}
-            ratings={ratings}
-            onComplete={handleBatteryComplete}
-            onBack={blockIndex > 0 ? () => setBlockIndex(b => b - 1) : null}
-            onThemeChange={setCurrentTheme}
-          />
-        : <FormBlock
-            block={block}
-            answers={answers}
-            onComplete={handleBlockComplete}
-            onBack={blockIndex > 0 ? () => setBlockIndex(b => b - 1) : null}
-          />
+  // Block 14 is planned once the first language is known.
+  const settleNavi = async (lang) => {
+    if (lang === naviLang) return
+    const m = manifest ?? (await loadManifest())
+    const plan = planNavi(lang, m)
+    setNaviLang(lang)
+    setNaviPlan(plan)
+    setAnswers((a) => {
+      const next = {}
+      for (const [k, v] of Object.entries(a)) if (!k.startsWith('navi_')) next[k] = v
+      if (plan.length) {
+        next.navi_shown = plan.map((p) => p.situation).join(',')
+        plan.forEach((p) => (next[`navi_${p.situation}_order`] = p.order.join(',')))
       }
-    </div>
+      return next
+    })
+  }
+
+  const finish = async () => {
+    setSubmitting(true)
+    const completedAt = new Date()
+    const meta = {
+      participant_id: identity.participantId,
+      play_number: identity.playNumber,
+      situation_order: situationOrder.join(','),
+      started_at: startedAt.toISOString(),
+      completed_at: completedAt.toISOString(),
+      duration_sec: Math.round((completedAt - startedAt) / 1000),
+    }
+    const { response: r, contact } = splitPayload(pruneHidden(answers), meta)
+    setResponse(r)
+    await submit(r, contact)
+    setSubmitting(false)
+    setEnded('done')
+    scrollTop()
+  }
+
+  const next = async () => {
+    if (step.kind === 'page') {
+      const qs = visibleQuestions(step.key, answers)
+      const unanswered = qs.filter((q) => q.required && answers[q.id] === undefined)
+      if (unanswered.length) {
+        setMissing(true)
+        return
+      }
+      const gate = gateFor(step.key, answers)
+      if (gate) {
+        setEnded(gate)
+        scrollTop()
+        return
+      }
+      if (step.key === 'background') await settleNavi(answers.first_language)
+    }
+    if (index === steps.length - 1) return finish()
+    setIndex(index + 1)
+    scrollTop()
+  }
+
+  const back = () => {
+    setMissing(false)
+    if (index > 0) {
+      setIndex(index - 1)
+      scrollTop()
+    }
+  }
+
+  const download = () => {
+    const blob = new Blob([JSON.stringify(response, null, 2)], { type: 'application/json' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `navi-response-${identity.participantId.slice(0, 8)}.json`
+    a.click()
+    URL.revokeObjectURL(url)
+  }
+
+  let body = null
+  if (ended) {
+    body = <EndPage reason={ended} answers={answers} response={response} onDownload={download} />
+  } else if (step.kind === 'page') {
+    const page = PAGES[step.key]
+    body = (
+      <>
+        {step.key === 'consent' ? <ConsentText /> : <h2 className="page-title">{page.title}</h2>}
+        {page.intro && <p className="lede">{page.intro}</p>}
+        {visibleQuestions(step.key, answers).map((q) => (
+          <Question key={q.id} q={q} value={answers[q.id]} onChange={(v) => setAnswer(q.id, v)} />
+        ))}
+      </>
+    )
+  } else if (step.kind === 'situation') {
+    body = (
+      <SituationPage
+        id={step.id}
+        number={situationOrder.indexOf(step.id) + 1}
+        total={situationCount}
+        answers={answers}
+        setAnswer={setAnswer}
+      />
+    )
+  } else if (step.kind === 'navi') {
+    body = (
+      <NaviPage
+        step={step}
+        number={naviPlan.findIndex((p) => p.situation === step.situation) + 1}
+        total={naviCount}
+        language={naviLang}
+        answers={answers}
+        setAnswer={setAnswer}
+      />
+    )
+  }
+
+  return (
+    <>
+      {!RECORDING && (
+        <div className="test-banner">Test mode · answers are not saved · pending SCSU IRB approval</div>
+      )}
+      <main className="shell" ref={topRef}>
+        {!ended && index > 0 && <Progress done={index} total={steps.length} />}
+        <section className="card">
+          {body}
+          {!ended && (
+            <>
+              {missing && (
+                <p className="notice" role="alert">
+                  Please answer the questions marked with * to continue.
+                </p>
+              )}
+              <div className="actions">
+                {index > 0 && (
+                  <button className="ghost" onClick={back} disabled={submitting}>
+                    Back
+                  </button>
+                )}
+                <button className="primary" onClick={next} disabled={submitting}>
+                  {index === steps.length - 1 ? (submitting ? 'Sending…' : 'Finish') : index === 0 ? 'Continue' : 'Next'}
+                </button>
+              </div>
+            </>
+          )}
+        </section>
+        <p className="foot">
+          St. Cloud State University · Department of Computing, Informatics and Data Science
+          <br />
+          {SITUATIONS.length} everyday situations · about 10 to 13 minutes
+        </p>
+      </main>
+    </>
   )
 }

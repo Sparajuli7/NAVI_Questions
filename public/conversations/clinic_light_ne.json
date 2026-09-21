@@ -1,0 +1,31 @@
+{
+  "id": "clinic_light_ne",
+  "situation": "clinic",
+  "level": "light",
+  "language": "ne",
+  "script": "devanagari",
+  "sample": true,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "I have a pain here, in my stomach. Since yesterday."
+    },
+    {
+      "speaker": "navi",
+      "text": "Okay, भन्नुभएकोमा धन्यवाद। Is the pain sharp, or more like a dull ache?"
+    },
+    {
+      "speaker": "learner",
+      "text": "Is it serious? What should I do?"
+    },
+    {
+      "speaker": "navi",
+      "text": "It is probably not serious, तर म एकपटक जाँच गर्न चाहन्छु। Drink water, rest, and come back if the pain gets worse वा ज्वरो आयो भने।"
+    }
+  ],
+  "target_term": "dull ache",
+  "mix_ratio": null,
+  "generated_with": "hand-written sample, replace with NAVI output",
+  "verified_by": null,
+  "verified_on": null
+}

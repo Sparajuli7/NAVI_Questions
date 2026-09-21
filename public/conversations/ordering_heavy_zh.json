@@ -1,0 +1,31 @@
+{
+  "id": "ordering_heavy_zh",
+  "situation": "ordering",
+  "level": "heavy",
+  "language": "zh",
+  "script": "simplified",
+  "sample": true,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "Hi, can I get the chicken sandwich?"
+    },
+    {
+      "speaker": "navi",
+      "text": "好的。要做成 combo 吗？配薯条和饮料。"
+    },
+    {
+      "speaker": "learner",
+      "text": "What is a combo?"
+    },
+    {
+      "speaker": "navi",
+      "text": "Combo 就是三明治、薯条和饮料一起，一个价格。Usually it is cheaper."
+    }
+  ],
+  "target_term": "combo",
+  "mix_ratio": null,
+  "generated_with": "hand-written sample, replace with NAVI output",
+  "verified_by": null,
+  "verified_on": null
+}

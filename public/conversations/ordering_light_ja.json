@@ -1,0 +1,31 @@
+{
+  "id": "ordering_light_ja",
+  "situation": "ordering",
+  "level": "light",
+  "language": "ja",
+  "script": "japanese",
+  "sample": true,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "Hi, can I get the chicken sandwich?"
+    },
+    {
+      "speaker": "navi",
+      "text": "Sure. Do you want that as a combo, ポテトとドリンク付きで？"
+    },
+    {
+      "speaker": "learner",
+      "text": "What is a combo?"
+    },
+    {
+      "speaker": "navi",
+      "text": "It means the sandwich, fries and a drink セットで, for one price. It is usually お得です。"
+    }
+  ],
+  "target_term": "combo",
+  "mix_ratio": null,
+  "generated_with": "hand-written sample, replace with NAVI output",
+  "verified_by": null,
+  "verified_on": null
+}

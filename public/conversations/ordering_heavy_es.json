@@ -1,0 +1,31 @@
+{
+  "id": "ordering_heavy_es",
+  "situation": "ordering",
+  "level": "heavy",
+  "language": "es",
+  "script": "latin",
+  "sample": true,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "Hi, can I get the chicken sandwich?"
+    },
+    {
+      "speaker": "navi",
+      "text": "Claro. ¿Lo quieres como combo, con papas fritas y una bebida?"
+    },
+    {
+      "speaker": "learner",
+      "text": "What is a combo?"
+    },
+    {
+      "speaker": "navi",
+      "text": "Combo significa el sándwich, las papas y la bebida juntos por un solo precio. Usually it is cheaper."
+    }
+  ],
+  "target_term": "combo",
+  "mix_ratio": null,
+  "generated_with": "hand-written sample, replace with NAVI output",
+  "verified_by": null,
+  "verified_on": null
+}

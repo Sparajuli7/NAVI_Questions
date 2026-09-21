@@ -1,0 +1,31 @@
+{
+  "id": "smalltalk_heavy_hi",
+  "situation": "smalltalk",
+  "level": "heavy",
+  "language": "hi",
+  "script": "devanagari",
+  "sample": true,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "It is really cold today."
+    },
+    {
+      "speaker": "navi",
+      "text": "I know, right? मैं तो बिल्कुल तैयार नहीं था। तुम अभी-अभी यहाँ आए हो क्या?"
+    },
+    {
+      "speaker": "learner",
+      "text": "Is it always like this here?"
+    },
+    {
+      "speaker": "navi",
+      "text": "सच कहूँ तो ये कुछ भी नहीं है। जनवरी तक रुको। You will want a real winter coat."
+    }
+  ],
+  "target_term": "I know, right?",
+  "mix_ratio": null,
+  "generated_with": "hand-written sample, replace with NAVI output",
+  "verified_by": null,
+  "verified_on": null
+}

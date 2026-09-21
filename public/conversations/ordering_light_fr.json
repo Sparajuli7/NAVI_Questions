@@ -1,0 +1,31 @@
+{
+  "id": "ordering_light_fr",
+  "situation": "ordering",
+  "level": "light",
+  "language": "fr",
+  "script": "latin",
+  "sample": true,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "Hi, can I get the chicken sandwich?"
+    },
+    {
+      "speaker": "navi",
+      "text": "Sure. Do you want that as a combo, avec des frites et une boisson ?"
+    },
+    {
+      "speaker": "learner",
+      "text": "What is a combo?"
+    },
+    {
+      "speaker": "navi",
+      "text": "It means the sandwich, fries and a drink ensemble, for one price. It is usually moins cher."
+    }
+  ],
+  "target_term": "combo",
+  "mix_ratio": null,
+  "generated_with": "hand-written sample, replace with NAVI output",
+  "verified_by": null,
+  "verified_on": null
+}

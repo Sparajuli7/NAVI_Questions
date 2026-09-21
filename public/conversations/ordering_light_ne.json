@@ -1,0 +1,31 @@
+{
+  "id": "ordering_light_ne",
+  "situation": "ordering",
+  "level": "light",
+  "language": "ne",
+  "script": "devanagari",
+  "sample": true,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "Hi, can I get the chicken sandwich?"
+    },
+    {
+      "speaker": "navi",
+      "text": "Sure. Do you want that as a combo, फ्राइज र ड्रिंकसँग?"
+    },
+    {
+      "speaker": "learner",
+      "text": "What is a combo?"
+    },
+    {
+      "speaker": "navi",
+      "text": "It means the sandwich, fries and a drink सँगै, for one price. It is usually सस्तो पर्छ।"
+    }
+  ],
+  "target_term": "combo",
+  "mix_ratio": null,
+  "generated_with": "hand-written sample, replace with NAVI output",
+  "verified_by": null,
+  "verified_on": null
+}

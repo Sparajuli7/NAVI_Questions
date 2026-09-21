@@ -1,0 +1,31 @@
+{
+  "id": "smalltalk_light_de",
+  "situation": "smalltalk",
+  "level": "light",
+  "language": "de",
+  "script": "latin",
+  "sample": true,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "It is really cold today."
+    },
+    {
+      "speaker": "navi",
+      "text": "I know, right? Darauf war ich nicht vorbereitet. Did you just move here?"
+    },
+    {
+      "speaker": "learner",
+      "text": "Is it always like this here?"
+    },
+    {
+      "speaker": "navi",
+      "text": "Honestly, das ist noch gar nichts. Wait until January. You will want a real winter coat."
+    }
+  ],
+  "target_term": "I know, right?",
+  "mix_ratio": null,
+  "generated_with": "hand-written sample, replace with NAVI output",
+  "verified_by": null,
+  "verified_on": null
+}

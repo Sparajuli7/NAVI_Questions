@@ -1,0 +1,31 @@
+{
+  "id": "professor_heavy_ru",
+  "situation": "professor",
+  "level": "heavy",
+  "language": "ru",
+  "script": "cyrillic",
+  "sample": true,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "Excuse me, do you have a minute? I did not understand the part about the deadline."
+    },
+    {
+      "speaker": "navi",
+      "text": "Конечно. Работу нужно сдать в пятницу в полночь, but you can ask for an extension, если нужно."
+    },
+    {
+      "speaker": "learner",
+      "text": "So can I submit it on Monday?"
+    },
+    {
+      "speaker": "navi",
+      "text": "Только если напишете мне письмо до пятницы and ask for an extension. Просто объясните причину, и обычно я соглашаюсь."
+    }
+  ],
+  "target_term": "extension",
+  "mix_ratio": null,
+  "generated_with": "hand-written sample, replace with NAVI output",
+  "verified_by": null,
+  "verified_on": null
+}

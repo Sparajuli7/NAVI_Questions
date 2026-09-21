@@ -1,0 +1,31 @@
+{
+  "id": "professor_heavy_de",
+  "situation": "professor",
+  "level": "heavy",
+  "language": "de",
+  "script": "latin",
+  "sample": true,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "Excuse me, do you have a minute? I did not understand the part about the deadline."
+    },
+    {
+      "speaker": "navi",
+      "text": "Natürlich. Die Arbeit ist Freitag um Mitternacht fällig, but you can ask for an extension, wenn Sie eine brauchen."
+    },
+    {
+      "speaker": "learner",
+      "text": "So can I submit it on Monday?"
+    },
+    {
+      "speaker": "navi",
+      "text": "Nur wenn Sie mir vor Freitag eine E-Mail schreiben and ask for an extension. Erklären Sie mir kurz, warum, und normalerweise sage ich ja."
+    }
+  ],
+  "target_term": "extension",
+  "mix_ratio": null,
+  "generated_with": "hand-written sample, replace with NAVI output",
+  "verified_by": null,
+  "verified_on": null
+}

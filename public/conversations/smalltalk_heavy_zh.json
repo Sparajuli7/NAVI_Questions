@@ -1,0 +1,31 @@
+{
+  "id": "smalltalk_heavy_zh",
+  "situation": "smalltalk",
+  "level": "heavy",
+  "language": "zh",
+  "script": "simplified",
+  "sample": true,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "It is really cold today."
+    },
+    {
+      "speaker": "navi",
+      "text": "I know, right? 我完全没做好心理准备。你是刚搬来的吗？"
+    },
+    {
+      "speaker": "learner",
+      "text": "Is it always like this here?"
+    },
+    {
+      "speaker": "navi",
+      "text": "说实话，这还不算什么。等到一月份吧。You will want a real winter coat."
+    }
+  ],
+  "target_term": "I know, right?",
+  "mix_ratio": null,
+  "generated_with": "hand-written sample, replace with NAVI output",
+  "verified_by": null,
+  "verified_on": null
+}

@@ -1,0 +1,31 @@
+{
+  "id": "smalltalk_light_ko",
+  "situation": "smalltalk",
+  "level": "light",
+  "language": "ko",
+  "script": "hangul",
+  "sample": true,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "It is really cold today."
+    },
+    {
+      "speaker": "navi",
+      "text": "I know, right? 완전 준비 안 됐었어. Did you just move here?"
+    },
+    {
+      "speaker": "learner",
+      "text": "Is it always like this here?"
+    },
+    {
+      "speaker": "navi",
+      "text": "Honestly, 이건 아무것도 아니야. Wait until January. You will want a real winter coat."
+    }
+  ],
+  "target_term": "I know, right?",
+  "mix_ratio": null,
+  "generated_with": "hand-written sample, replace with NAVI output",
+  "verified_by": null,
+  "verified_on": null
+}

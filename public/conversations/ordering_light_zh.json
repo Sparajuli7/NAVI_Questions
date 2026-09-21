@@ -1,0 +1,31 @@
+{
+  "id": "ordering_light_zh",
+  "situation": "ordering",
+  "level": "light",
+  "language": "zh",
+  "script": "simplified",
+  "sample": true,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "Hi, can I get the chicken sandwich?"
+    },
+    {
+      "speaker": "navi",
+      "text": "Sure. Do you want that as a combo, 配薯条和饮料？"
+    },
+    {
+      "speaker": "learner",
+      "text": "What is a combo?"
+    },
+    {
+      "speaker": "navi",
+      "text": "It means the sandwich, fries and a drink 一起, for one price. It is usually 更便宜。"
+    }
+  ],
+  "target_term": "combo",
+  "mix_ratio": null,
+  "generated_with": "hand-written sample, replace with NAVI output",
+  "verified_by": null,
+  "verified_on": null
+}
