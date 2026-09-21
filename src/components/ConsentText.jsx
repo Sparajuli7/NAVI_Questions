@@ -30,18 +30,11 @@ export default function ConsentText() {
 
       <h2>What you will do</h2>
       <p>
-        Answer questions on your own device. It takes about 10 to 13 minutes. You may also read a
-        few short example conversations with an AI practice partner and tell us what you think
-        of them. These examples were written in advance. Nothing you type is sent to any AI
-        system. You can skip any question and stop at any time by closing the page.
-      </p>
-
-      <h2>Who else benefits</h2>
-      <p>
-        The researcher is also a co-founder of a small company developing an AI practice partner
-        called NAVI. What we learn from this study may help shape a product in the future. Only
-        group-level findings would ever be used that way. Your individual answers are never sold,
-        and never shared with anyone outside the research team.
+        Answer questions on your own device. It takes about 10 to 13 minutes. You may also see
+        short example exchanges for a few situations: what someone might say (input) and how an
+        AI practice partner might reply (output). These examples are fixed text shown only as a
+        visual aid. Nothing you type is sent to any AI system. You can skip any question and
+        stop at any time by closing the page.
       </p>
 
       <h2>Risks and benefits</h2>

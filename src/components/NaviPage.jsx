@@ -10,7 +10,7 @@ function Conversation({ convo }) {
     <div className="convo" dir="auto">
       {convo.turns.map((t, i) => (
         <div key={i} className={'turn ' + (t.speaker === 'navi' ? 'turn-navi' : 'turn-you')}>
-          <span className="who">{t.speaker === 'navi' ? 'NAVI' : 'You'}</span>
+          <span className="who">{t.speaker === 'navi' ? 'NAVI (output)' : 'You (input)'}</span>
           <span className="said" dir="auto">
             {t.text}
           </span>
@@ -49,9 +49,10 @@ export default function NaviPage({ step, number, total, language, answers, setAn
       </p>
       <h2 className="sit-name">{sit?.name}</h2>
       <p className="lede">
-        Here is the same short conversation three ways. In each one, NAVI, an AI practice
-        partner, mixes a different amount of your language into its English. Read all three,
-        then answer.
+        Below are three short practice exchanges for this situation. Each shows what you might
+        say (input) and how NAVI, an AI practice partner, might reply (output). The three
+        versions mix different amounts of your language into NAVI&apos;s English. Read all
+        three, then answer.
       </p>
 
       {failed && (
@@ -68,9 +69,6 @@ export default function NaviPage({ step, number, total, language, answers, setAn
           return (
             <section className="version" key={level}>
               <h3 className="version-label">Version {LETTERS[i]}</h3>
-              {convo.sample && (
-                <p className="sample-flag">Sample text, replace with NAVI output before use</p>
-              )}
               <Conversation convo={convo} />
               <div className="question">
                 <p className="q-label">How well did you understand Version {LETTERS[i]}?</p>

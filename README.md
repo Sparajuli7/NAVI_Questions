@@ -57,8 +57,7 @@ Japanese, Korean, Nepali, Russian, Spanish. Anyone who picks "Other" skips Block
 
 The product block asks which situations they would practice, typing or talking,
 beforehand on a phone or in the moment through earbuds, whether they would pay, and
-how much per month (only asked if they did not say no). The consent form discloses
-that findings may inform a future product, since the researcher is a co-founder.
+how much per month (only asked if they did not say no).
 
 ## Adding a language
 

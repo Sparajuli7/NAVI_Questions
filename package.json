@@ -8,7 +8,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "fields": "node scripts/fields.mjs"
+    "fields": "node scripts/fields.mjs",
+    "questions-md": "node scripts/questions-md.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",
