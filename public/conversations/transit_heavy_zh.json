@@ -1,0 +1,31 @@
+{
+  "id": "transit_heavy_zh",
+  "situation": "transit",
+  "level": "heavy",
+  "language": "zh",
+  "script": "simplified",
+  "sample": false,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "Excuse me, does this bus go to campus?"
+    },
+    {
+      "speaker": "navi",
+      "text": "是的，这辆公交直接到大学。在 main entrance 附近停靠。"
+    },
+    {
+      "speaker": "learner",
+      "text": "How much is a single ticket?"
+    },
+    {
+      "speaker": "navi",
+      "text": "单程票价是两美元。如果你需要 transfer，跟司机说，是免费的。"
+    }
+  ],
+  "target_term": "transfer",
+  "mix_ratio": null,
+  "generated_with": "claude-code",
+  "verified_by": null,
+  "verified_on": null
+}

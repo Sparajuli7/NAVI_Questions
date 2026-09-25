@@ -97,6 +97,7 @@ What is your first language?
 - [ ] Chinese (Mandarin) *(stored value: `zh`)*
 - [ ] French *(stored value: `fr`)*
 - [ ] German *(stored value: `de`)*
+- [ ] Hausa *(stored value: `ha`)*
 - [ ] Hindi *(stored value: `hi`)*
 - [ ] Japanese *(stored value: `ja`)*
 - [ ] Korean *(stored value: `ko`)*
@@ -725,6 +726,20 @@ _Shared by every language that has Block 14._
 - **You (input)**: Is it serious? What should I do?
 - **NAVI (output)**: Es ist wahrscheinlich nicht schlimm, aber ich möchte es prüfen. Trinken Sie Wasser, ruhen Sie sich aus, and come back if the pain gets worse or you get a fever.
 
+#### Version content — Light mixing of the first language (`light`, Hausa / `ha`)
+
+- **You (input)**: I have a pain here, in my stomach. Since yesterday.
+- **NAVI (output)**: Okay, na gode da faɗin haka. Is the pain sharp, or more like a dull ache?
+- **You (input)**: Is it serious? What should I do?
+- **NAVI (output)**: It is probably not serious, amma ina son duba. Drink water, rest, and come back if the pain gets worse ko zazzaɓi ya zo.
+
+#### Version content — Heavy mixing of the first language (`heavy`, Hausa / `ha`)
+
+- **You (input)**: I have a pain here, in my stomach. Since yesterday.
+- **NAVI (output)**: To, na gode da faɗin haka. Ciwo yana kaifi, ko yana kama da dull ache?
+- **You (input)**: Is it serious? What should I do?
+- **NAVI (output)**: Da alama ba mai tsanani ba ne, amma ina son duba. Sha ruwa, huta, and come back if the pain gets worse or you get a fever.
+
 #### Version content — Light mixing of the first language (`light`, Hindi / `hi`)
 
 - **You (input)**: I have a pain here, in my stomach. Since yesterday.
@@ -957,6 +972,20 @@ _Shared by every language that has Block 14._
 - **NAVI (output)**: Natürlich. Die Arbeit ist Freitag um Mitternacht fällig, but you can ask for an extension, wenn Sie eine brauchen.
 - **You (input)**: So can I submit it on Monday?
 - **NAVI (output)**: Nur wenn Sie mir vor Freitag eine E-Mail schreiben and ask for an extension. Erklären Sie mir kurz, warum, und normalerweise sage ich ja.
+
+#### Version content — Light mixing of the first language (`light`, Hausa / `ha`)
+
+- **You (input)**: Excuse me, do you have a minute? I did not understand the part about the deadline.
+- **NAVI (output)**: Of course. The paper is due Friday da tsakar dare, but you can ask for an extension if you need one.
+- **You (input)**: So can I submit it on Monday?
+- **NAVI (output)**: Only if you email me kafin Juma'a and ask for an extension. Just explain why, and I will usually say yes.
+
+#### Version content — Heavy mixing of the first language (`heavy`, Hausa / `ha`)
+
+- **You (input)**: Excuse me, do you have a minute? I did not understand the part about the deadline.
+- **NAVI (output)**: Tabbas. Takarda ta ƙare Juma'a da tsakar dare, but you can ask for an extension idan kana buƙata.
+- **You (input)**: So can I submit it on Monday?
+- **NAVI (output)**: Sai dai in ka aika mini email kafin Juma'a and ask for an extension. Ka bayyana dalilin, kuma galibi ina cewa eh.
 
 #### Version content — Light mixing of the first language (`light`, Hindi / `hi`)
 
@@ -1191,6 +1220,20 @@ _Shared by every language that has Block 14._
 - **You (input)**: What is a combo?
 - **NAVI (output)**: Ein combo heißt Sandwich, Pommes und Getränk zusammen für einen Preis. Usually it is cheaper.
 
+#### Version content — Light mixing of the first language (`light`, Hausa / `ha`)
+
+- **You (input)**: Hi, can I get the chicken sandwich?
+- **NAVI (output)**: Sure. Do you want that as a combo, da fries da abin sha?
+- **You (input)**: What is a combo?
+- **NAVI (output)**: It means the sandwich, fries and a drink tare, for one price. It is usually mai arha.
+
+#### Version content — Heavy mixing of the first language (`heavy`, Hausa / `ha`)
+
+- **You (input)**: Hi, can I get the chicken sandwich?
+- **NAVI (output)**: To. Kana son shi a matsayin combo, da fries da abin sha?
+- **You (input)**: What is a combo?
+- **NAVI (output)**: Combo yana nufin sandwich, fries da abin sha tare da farashi guda ɗaya. Usually it is cheaper.
+
 #### Version content — Light mixing of the first language (`light`, Hindi / `hi`)
 
 - **You (input)**: Hi, can I get the chicken sandwich?
@@ -1424,6 +1467,20 @@ _Shared by every language that has Block 14._
 - **You (input)**: Is it always like this here?
 - **NAVI (output)**: Ehrlich gesagt ist das noch gar nichts. Warte mal bis Januar. You will want a real winter coat.
 
+#### Version content — Light mixing of the first language (`light`, Hausa / `ha`)
+
+- **You (input)**: It is really cold today.
+- **NAVI (output)**: I know, right? Ban kasance a shirye ba. Did you just move here?
+- **You (input)**: Is it always like this here?
+- **NAVI (output)**: Honestly, ba komai ba ne wannan. Wait until January. You will want a real winter coat.
+
+#### Version content — Heavy mixing of the first language (`heavy`, Hausa / `ha`)
+
+- **You (input)**: It is really cold today.
+- **NAVI (output)**: I know, right? Ban kasance a shirye gaskiya ba. Yanzu ne ka ƙaura zuwa nan?
+- **You (input)**: Is it always like this here?
+- **NAVI (output)**: Gaskiya, ba komai ba ne wannan. Jira har Janairu. You will want a real winter coat.
+
 #### Version content — Light mixing of the first language (`light`, Hindi / `hi`)
 
 - **You (input)**: It is really cold today.
@@ -1604,11 +1661,287 @@ If NAVI talked to you like the version you chose, would you use it to practice b
 - [ ] Maybe
 - [ ] Yes
 
+### NAVI situation: Buying a bus ticket or asking about a route (`transit`)
+
+#### Version content — English only (no mixing) (`none`, language `en`)
+
+_Shared by every language that has Block 14._
+
+- **You (input)**: Excuse me, does this bus go to campus?
+- **NAVI (output)**: Yes, this bus goes straight to the university. It stops right by the main entrance.
+- **You (input)**: How much is a single ticket?
+- **NAVI (output)**: A single ride is two dollars. If you need a transfer, ask the driver and it is free.
+
+#### Version content — Light mixing of the first language (`light`, Chinese (Mandarin) / `zh`)
+
+- **You (input)**: Excuse me, does this bus go to campus?
+- **NAVI (output)**: Yes, 这辆公交 goes straight to the university. It stops right by the main entrance.
+- **You (input)**: How much is a single ticket?
+- **NAVI (output)**: A single ride costs 两美元. If you need a transfer, ask the driver and it is free.
+
+#### Version content — Heavy mixing of the first language (`heavy`, Chinese (Mandarin) / `zh`)
+
+- **You (input)**: Excuse me, does this bus go to campus?
+- **NAVI (output)**: 是的，这辆公交直接到大学。在 main entrance 附近停靠。
+- **You (input)**: How much is a single ticket?
+- **NAVI (output)**: 单程票价是两美元。如果你需要 transfer，跟司机说，是免费的。
+
+#### Version content — Light mixing of the first language (`light`, French / `fr`)
+
+- **You (input)**: Excuse me, does this bus go to campus?
+- **NAVI (output)**: Yes, ce bus goes straight to the university. Il s'arrête right by the main entrance.
+- **You (input)**: How much is a single ticket?
+- **NAVI (output)**: A single ride costs deux dollars. If you need a transfer, demandez au chauffeur and it is free.
+
+#### Version content — Heavy mixing of the first language (`heavy`, French / `fr`)
+
+- **You (input)**: Excuse me, does this bus go to campus?
+- **NAVI (output)**: Oui, ce bus va directement à l'université. Il s'arrête right by the main entrance.
+- **You (input)**: How much is a single ticket?
+- **NAVI (output)**: Le trajet simple coûte deux dollars. Si tu as besoin d'un transfer, demande au chauffeur, c'est gratuit.
+
+#### Version content — Light mixing of the first language (`light`, German / `de`)
+
+- **You (input)**: Excuse me, does this bus go to campus?
+- **NAVI (output)**: Yes, dieser Bus fährt direkt zur Uni. It stops right by the main entrance.
+- **You (input)**: How much is a single ticket?
+- **NAVI (output)**: A single ride costs zwei Dollar. If you need a transfer, ask the driver and it is free.
+
+#### Version content — Heavy mixing of the first language (`heavy`, German / `de`)
+
+- **You (input)**: Excuse me, does this bus go to campus?
+- **NAVI (output)**: Ja, dieser Bus fährt direkt zur Universität. Er hält right by the main entrance.
+- **You (input)**: How much is a single ticket?
+- **NAVI (output)**: Eine Einzelfahrt kostet zwei Dollar. Wenn du einen transfer brauchst, frag den Fahrer — das ist kostenlos.
+
+#### Version content — Light mixing of the first language (`light`, Hausa / `ha`)
+
+- **You (input)**: Excuse me, does this bus go to campus?
+- **NAVI (output)**: Yes, wannan bas yana tafiya straight to the university. It stops right by the main entrance.
+- **You (input)**: How much is a single ticket?
+- **NAVI (output)**: A single ride is dala biyu. If you need a transfer, ask the driver and it is free.
+
+#### Version content — Heavy mixing of the first language (`heavy`, Hausa / `ha`)
+
+- **You (input)**: Excuse me, does this bus go to campus?
+- **NAVI (output)**: Ee, wannan bas yana tafiya kai tsaye zuwa jami'a. Yana tsayawa right by the main entrance.
+- **You (input)**: How much is a single ticket?
+- **NAVI (output)**: Tikitin guda ɗaya dala biyu ne. Idan kana buƙatar transfer, tambayi direban, kyauta ne.
+
+#### Version content — Light mixing of the first language (`light`, Hindi / `hi`)
+
+- **You (input)**: Excuse me, does this bus go to campus?
+- **NAVI (output)**: Yes, यह बस कैंपस तक goes straight. It stops right by the main entrance.
+- **You (input)**: How much is a single ticket?
+- **NAVI (output)**: A single ride दो डॉलर है। If you need a transfer, ask the driver and it is free.
+
+#### Version content — Heavy mixing of the first language (`heavy`, Hindi / `hi`)
+
+- **You (input)**: Excuse me, does this bus go to campus?
+- **NAVI (output)**: हाँ, यह बस सीधे यूनिवर्सिटी तक जाती है। Main entrance के पास रुकती है।
+- **You (input)**: How much is a single ticket?
+- **NAVI (output)**: एक सफर दो डॉलर है। Transfer चाहिए तो ड्राइवर से पूछें, यह मुफ्त है।
+
+#### Version content — Light mixing of the first language (`light`, Japanese / `ja`)
+
+- **You (input)**: Excuse me, does this bus go to campus?
+- **NAVI (output)**: Yes, このバスはキャンパスまで goes straight. It stops right by the main entrance.
+- **You (input)**: How much is a single ticket?
+- **NAVI (output)**: A single ride is 二ドルです。If you need a transfer, ask the driver and it is free.
+
+#### Version content — Heavy mixing of the first language (`heavy`, Japanese / `ja`)
+
+- **You (input)**: Excuse me, does this bus go to campus?
+- **NAVI (output)**: はい、このバスはキャンパスまで直行します。Right by the main entrance で降りてください。
+- **You (input)**: How much is a single ticket?
+- **NAVI (output)**: 片道は二ドルです。Transfer が必要なら運転手に聞いてください、無料です。
+
+#### Version content — Light mixing of the first language (`light`, Korean / `ko`)
+
+- **You (input)**: Excuse me, does this bus go to campus?
+- **NAVI (output)**: Yes, 이 버스가 캠퍼스까지 goes straight. It stops right by the main entrance.
+- **You (input)**: How much is a single ticket?
+- **NAVI (output)**: A single ride는 2달러예요. If you need a transfer, ask the driver and it is free.
+
+#### Version content — Heavy mixing of the first language (`heavy`, Korean / `ko`)
+
+- **You (input)**: Excuse me, does this bus go to campus?
+- **NAVI (output)**: 네, 이 버스가 캠퍼스까지 바로 가요. Right by the main entrance 에서 내리면 돼요.
+- **You (input)**: How much is a single ticket?
+- **NAVI (output)**: 편도 요금은 2달러예요. Transfer 가 필요하면 기사님한테 말하세요, 무료예요.
+
+#### Version content — Light mixing of the first language (`light`, Nepali / `ne`)
+
+- **You (input)**: Excuse me, does this bus go to campus?
+- **NAVI (output)**: Yes, यो बस क्याम्पससम्म goes straight. It stops right by the main entrance.
+- **You (input)**: How much is a single ticket?
+- **NAVI (output)**: A single ride दुई डलर हो। If you need a transfer, ask the driver and it is free.
+
+#### Version content — Heavy mixing of the first language (`heavy`, Nepali / `ne`)
+
+- **You (input)**: Excuse me, does this bus go to campus?
+- **NAVI (output)**: हो, यो बस सिधा विश्वविद्यालयसम्म जान्छ। Main entrance नजिक रोकिन्छ।
+- **You (input)**: How much is a single ticket?
+- **NAVI (output)**: एकतर्फी भाडा दुई डलर छ। Transfer चाहिएमा driver लाई सोध्नुस्, निःशुल्क छ।
+
+#### Version content — Light mixing of the first language (`light`, Russian / `ru`)
+
+- **You (input)**: Excuse me, does this bus go to campus?
+- **NAVI (output)**: Yes, этот автобус goes straight to the university. It stops right by the main entrance.
+- **You (input)**: How much is a single ticket?
+- **NAVI (output)**: A single ride costs два доллара. If you need a transfer, ask the driver and it is free.
+
+#### Version content — Heavy mixing of the first language (`heavy`, Russian / `ru`)
+
+- **You (input)**: Excuse me, does this bus go to campus?
+- **NAVI (output)**: Да, этот автобус едет прямо до университета. Останавливается right by the main entrance.
+- **You (input)**: How much is a single ticket?
+- **NAVI (output)**: Одна поездка стоит два доллара. Если нужен transfer, скажи водителю — это бесплатно.
+
+#### Version content — Light mixing of the first language (`light`, Spanish / `es`)
+
+- **You (input)**: Excuse me, does this bus go to campus?
+- **NAVI (output)**: Yes, este autobús goes straight to the university. Para right by the main entrance.
+- **You (input)**: How much is a single ticket?
+- **NAVI (output)**: A single ride cuesta dos dólares. If you need a transfer, ask the driver and it is free.
+
+#### Version content — Heavy mixing of the first language (`heavy`, Spanish / `es`)
+
+- **You (input)**: Excuse me, does this bus go to campus?
+- **NAVI (output)**: Sí, este autobús va directo a la universidad. Se para right by the main entrance.
+- **You (input)**: How much is a single ticket?
+- **NAVI (output)**: El pasaje cuesta dos dólares. Si necesitas un transfer, pregúntale al conductor, es gratis.
+
+#### Questions after the three versions
+
+### Q84. `navi_transit_none_understand`
+
+How well did you understand Version [A/B/C mapped to none]?
+
+**Type:** single
+
+- [ ] Not at all
+- [ ] A little
+- [ ] Somewhat
+- [ ] Mostly
+- [ ] Completely
+
+### Q85. `navi_transit_none_natural`
+
+How natural does NAVI sound in Version [A/B/C mapped to none]?
+
+**Type:** single
+
+- [ ] Not at all natural
+- [ ] Slightly
+- [ ] Somewhat
+- [ ] Mostly
+- [ ] Completely natural
+
+### Q86. `navi_transit_light_understand`
+
+How well did you understand Version [A/B/C mapped to light]?
+
+**Type:** single
+
+- [ ] Not at all
+- [ ] A little
+- [ ] Somewhat
+- [ ] Mostly
+- [ ] Completely
+
+### Q87. `navi_transit_light_natural`
+
+How natural does NAVI sound in Version [A/B/C mapped to light]?
+
+**Type:** single
+
+- [ ] Not at all natural
+- [ ] Slightly
+- [ ] Somewhat
+- [ ] Mostly
+- [ ] Completely natural
+
+### Q88. `navi_transit_heavy_understand`
+
+How well did you understand Version [A/B/C mapped to heavy]?
+
+**Type:** single
+
+- [ ] Not at all
+- [ ] A little
+- [ ] Somewhat
+- [ ] Mostly
+- [ ] Completely
+
+### Q89. `navi_transit_heavy_natural`
+
+How natural does NAVI sound in Version [A/B/C mapped to heavy]?
+
+**Type:** single
+
+- [ ] Not at all natural
+- [ ] Slightly
+- [ ] Somewhat
+- [ ] Mostly
+- [ ] Completely natural
+
+### Q90. `navi_transit_pref`
+
+Which version would help you most in this situation?
+
+*Stored as the mixing level (`none` / `light` / `heavy`), not the letter.*
+
+**Type:** single
+
+- [ ] Version A
+- [ ] Version B
+- [ ] Version C
+
+### Q91. `navi_transit_use`
+
+If NAVI talked to you like the version you chose, would you use it to practice before this situation?
+
+**Type:** single
+
+- [ ] No
+- [ ] Maybe
+- [ ] Yes
+
+## Page: How much of your language in the tool?
+
+_Below is the same short clinic practice shown three ways — almost no mixing, a little, and mostly your language. Look at them, then tell us how much of your first language you would want in the tool._
+
+_This page shows three live clinic previews (Almost none / A little / Mostly my language) as app-style input/output chats, then asks the preference question._
+
+### Q92. `mix_preference`
+
+How much of your first language do you want in the tool?
+
+**Type:** single
+
+- [ ] Almost none
+- [ ] A little
+- [ ] About half
+- [ ] Mostly my language
+- [ ] Not sure
+- [ ] Other
+
+### Q93. `mix_preference_other`
+
+Describe how much mixing you want
+
+*Shown only when a prior answer matches the survey logic.*
+
+**Type:** text
+
+*(open text)*
+
 ## Page: If something like NAVI existed
 
 _A few questions about what would actually be useful to you. There are no right answers._
 
-### Q84. `practice_situations`
+### Q94. `practice_situations`
 
 Which of these would you actually open an app to practice?
 
@@ -1628,7 +1961,7 @@ Which of these would you actually open an app to practice?
 - [ ] Following humor, sarcasm or slang in a group
 - [ ] None of these
 
-### Q85. `practice_mode`
+### Q95. `practice_mode`
 
 How would you want to practice?
 
@@ -1639,7 +1972,7 @@ How would you want to practice?
 - [ ] Both
 - [ ] Not sure
 
-### Q86. `practice_when`
+### Q96. `practice_when`
 
 When would help be most useful?
 
@@ -1650,7 +1983,43 @@ When would help be most useful?
 - [ ] Both
 - [ ] Neither
 
-### Q87. `would_pay`
+### Q97. `pain_points`
+
+What gets in the way most when you have to use English in real life?
+
+*Choose every one that applies.*
+
+**Type:** multi
+
+- [ ] I get stuck for a word
+- [ ] I am afraid of looking stupid
+- [ ] I cannot practice before the real situation
+- [ ] I do not understand what people say back
+- [ ] I am too nervous to speak
+- [ ] I do not have time to practice
+- [ ] Other
+
+### Q98. `pain_points_other`
+
+What else gets in the way?
+
+*Shown only when a prior answer matches the survey logic.*
+
+**Type:** text
+
+*(open text)*
+
+### Q99. `irresistible_text`
+
+What would make you actually open this every week?
+
+*Be specific. There is no wrong answer.*
+
+**Type:** longtext
+
+*(open text)*
+
+### Q100. `would_pay`
 
 Would you pay for an app like this?
 
@@ -1660,7 +2029,7 @@ Would you pay for an app like this?
 - [ ] Maybe
 - [ ] Yes
 
-### Q88. `pay_amount`
+### Q101. `pay_amount`
 
 What is the most you would pay per month?
 
@@ -1676,7 +2045,7 @@ What is the most you would pay per month?
 
 ## Page: When it goes wrong
 
-### Q89. `coping`
+### Q102. `coping`
 
 When you get stuck in one of those situations, what do you usually do?
 
@@ -1691,7 +2060,7 @@ When you get stuck in one of those situations, what do you usually do?
 - [ ] Push through and hope for the best
 - [ ] Avoid the situation next time
 
-### Q90. `tools_used`
+### Q103. `tools_used`
 
 What do you use now to help with English?
 
@@ -1706,7 +2075,7 @@ What do you use now to help with English?
 - [ ] A person I know
 - [ ] Nothing
 
-### Q91. `tools_freq`
+### Q104. `tools_freq`
 
 How often do you use those?
 
@@ -1722,7 +2091,7 @@ How often do you use those?
 
 _Both questions are optional._
 
-### Q92. `incident_text`
+### Q105. `incident_text`
 
 Think of one time in the last month when language got in the way. What happened?
 
@@ -1732,7 +2101,7 @@ Think of one time in the last month when language got in the way. What happened?
 
 *(open text)*
 
-### Q93. `wish_text`
+### Q106. `wish_text`
 
 Is there anything you wish existed that would have helped?
 
@@ -1746,7 +2115,7 @@ _Stored only in the contact survey. Fields: `contact_email`, `interview_ok`, `be
 
 _These are optional. Anything here is stored separately from your answers and deleted when the study ends._
 
-### Q94. `interview_ok`
+### Q107. `interview_ok`
 
 Would you be willing to talk for 30 to 45 minutes about this?
 
@@ -1755,7 +2124,7 @@ Would you be willing to talk for 30 to 45 minutes about this?
 - [ ] Yes
 - [ ] No
 
-### Q95. `beta_ok`
+### Q108. `beta_ok`
 
 Would you be willing to try an early version of NAVI later this year?
 
@@ -1764,7 +2133,7 @@ Would you be willing to try an early version of NAVI later this year?
 - [ ] Yes
 - [ ] No
 
-### Q96. `contact_email`
+### Q109. `contact_email`
 
 What is the best email to reach you at?
 
@@ -1874,9 +2243,23 @@ navi_smalltalk_heavy_understand
 navi_smalltalk_heavy_natural
 navi_smalltalk_pref
 navi_smalltalk_use
+navi_transit_order
+navi_transit_none_understand
+navi_transit_none_natural
+navi_transit_light_understand
+navi_transit_light_natural
+navi_transit_heavy_understand
+navi_transit_heavy_natural
+navi_transit_pref
+navi_transit_use
+mix_preference
+mix_preference_other
 practice_situations
 practice_mode
 practice_when
+pain_points
+pain_points_other
+irresistible_text
 would_pay
 pay_amount
 coping

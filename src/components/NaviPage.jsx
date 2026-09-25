@@ -2,27 +2,30 @@ import { useEffect, useState } from 'react'
 import { SITUATIONS, NAVI_UNDERSTAND, NAVI_NATURAL, NAVI_USE } from '../data/questions'
 import { loadConversation } from '../lib/conversations'
 import { ChoiceGroup } from './Controls'
+import Conversation from './Conversation'
 
 const LETTERS = ['A', 'B', 'C']
 
-function Conversation({ convo }) {
-  return (
-    <div className="convo" dir="auto">
-      {convo.turns.map((t, i) => (
-        <div key={i} className={'turn ' + (t.speaker === 'navi' ? 'turn-navi' : 'turn-you')}>
-          <span className="who">{t.speaker === 'navi' ? 'NAVI (output)' : 'You (input)'}</span>
-          <span className="said" dir="auto">
-            {t.text}
-          </span>
-        </div>
-      ))}
-    </div>
+function ScreenshotOrChat({ situation, level, lang, convo }) {
+  const imgSrc = level === 'none'
+    ? `/screenshots/_shared/${situation}_none.png`
+    : `/screenshots/${lang}/${situation}_${level}.png`
+  const [useImg, setUseImg] = useState(true)
+  return useImg ? (
+    <img
+      className="convo-screenshot"
+      src={imgSrc}
+      alt=""
+      onError={() => setUseImg(false)}
+    />
+  ) : (
+    <Conversation convo={convo} />
   )
 }
 
 /**
- * Three versions of the same conversation, shown in a random order as A, B, C.
- * Every answer is stored against the mixing level, never the letter.
+ * Three versions of the same practice exchange, shown as A/B/C.
+ * Answers are stored by mixing level, never by letter.
  */
 export default function NaviPage({ step, number, total, language, answers, setAnswer }) {
   const { situation, order } = step
@@ -45,14 +48,13 @@ export default function NaviPage({ step, number, total, language, answers, setAn
   return (
     <>
       <p className="eyebrow">
-        Example conversations · {number} of {total}
+        Practice preview · {number} of {total}
       </p>
       <h2 className="sit-name">{sit?.name}</h2>
       <p className="lede">
-        Below are three short practice exchanges for this situation. Each shows what you might
-        say (input) and how NAVI, an AI practice partner, might reply (output). The three
-        versions mix different amounts of your language into NAVI&apos;s English. Read all
-        three, then answer.
+        Here is what practicing this situation could look like in the app. Each version shows
+        your line (input) and NAVI&apos;s reply (output). The three versions mix different amounts
+        of your language into English. Read all three, then rank which helps you most.
       </p>
 
       {failed && (
@@ -69,7 +71,7 @@ export default function NaviPage({ step, number, total, language, answers, setAn
           return (
             <section className="version" key={level}>
               <h3 className="version-label">Version {LETTERS[i]}</h3>
-              <Conversation convo={convo} />
+              <ScreenshotOrChat situation={situation} level={level} lang={language} convo={convo} />
               <div className="question">
                 <p className="q-label">How well did you understand Version {LETTERS[i]}?</p>
                 <ChoiceGroup

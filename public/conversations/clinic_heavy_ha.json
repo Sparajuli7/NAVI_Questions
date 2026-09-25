@@ -1,0 +1,31 @@
+{
+  "id": "clinic_heavy_ha",
+  "situation": "clinic",
+  "level": "heavy",
+  "language": "ha",
+  "script": "latin",
+  "sample": false,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "I have a pain here, in my stomach. Since yesterday."
+    },
+    {
+      "speaker": "navi",
+      "text": "To, na gode da faɗin haka. Ciwo yana kaifi, ko yana kama da dull ache?"
+    },
+    {
+      "speaker": "learner",
+      "text": "Is it serious? What should I do?"
+    },
+    {
+      "speaker": "navi",
+      "text": "Da alama ba mai tsanani ba ne, amma ina son duba. Sha ruwa, huta, and come back if the pain gets worse or you get a fever."
+    }
+  ],
+  "target_term": "dull ache",
+  "mix_ratio": null,
+  "generated_with": "claude-code",
+  "verified_by": null,
+  "verified_on": null
+}

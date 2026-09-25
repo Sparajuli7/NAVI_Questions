@@ -1,0 +1,31 @@
+{
+  "id": "transit_heavy_ko",
+  "situation": "transit",
+  "level": "heavy",
+  "language": "ko",
+  "script": "hangul",
+  "sample": false,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "Excuse me, does this bus go to campus?"
+    },
+    {
+      "speaker": "navi",
+      "text": "네, 이 버스가 캠퍼스까지 바로 가요. Right by the main entrance 에서 내리면 돼요."
+    },
+    {
+      "speaker": "learner",
+      "text": "How much is a single ticket?"
+    },
+    {
+      "speaker": "navi",
+      "text": "편도 요금은 2달러예요. Transfer 가 필요하면 기사님한테 말하세요, 무료예요."
+    }
+  ],
+  "target_term": "transfer",
+  "mix_ratio": null,
+  "generated_with": "claude-code",
+  "verified_by": null,
+  "verified_on": null
+}

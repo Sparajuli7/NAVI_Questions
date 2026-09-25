@@ -1,0 +1,31 @@
+{
+  "id": "transit_heavy_ha",
+  "situation": "transit",
+  "level": "heavy",
+  "language": "ha",
+  "script": "latin",
+  "sample": false,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "Excuse me, does this bus go to campus?"
+    },
+    {
+      "speaker": "navi",
+      "text": "Ee, wannan bas yana tafiya kai tsaye zuwa jami'a. Yana tsayawa right by the main entrance."
+    },
+    {
+      "speaker": "learner",
+      "text": "How much is a single ticket?"
+    },
+    {
+      "speaker": "navi",
+      "text": "Tikitin guda ɗaya dala biyu ne. Idan kana buƙatar transfer, tambayi direban, kyauta ne."
+    }
+  ],
+  "target_term": "transfer",
+  "mix_ratio": null,
+  "generated_with": "claude-code",
+  "verified_by": null,
+  "verified_on": null
+}

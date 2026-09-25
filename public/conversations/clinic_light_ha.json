@@ -1,0 +1,31 @@
+{
+  "id": "clinic_light_ha",
+  "situation": "clinic",
+  "level": "light",
+  "language": "ha",
+  "script": "latin",
+  "sample": false,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "I have a pain here, in my stomach. Since yesterday."
+    },
+    {
+      "speaker": "navi",
+      "text": "Okay, na gode da faɗin haka. Is the pain sharp, or more like a dull ache?"
+    },
+    {
+      "speaker": "learner",
+      "text": "Is it serious? What should I do?"
+    },
+    {
+      "speaker": "navi",
+      "text": "It is probably not serious, amma ina son duba. Drink water, rest, and come back if the pain gets worse ko zazzaɓi ya zo."
+    }
+  ],
+  "target_term": "dull ache",
+  "mix_ratio": null,
+  "generated_with": "claude-code",
+  "verified_by": null,
+  "verified_on": null
+}

@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { PAGES, SITUATIONS } from './data/questions'
+import { PAGES, SITUATIONS, DIMENSIONS } from './data/questions'
 import { buildSteps, gateFor, newSituationOrder, planNavi } from './lib/flow'
 import { loadManifest } from './lib/conversations'
 import { participantIdentity, splitPayload, submit, RECORDING } from './lib/recording'
@@ -8,7 +8,9 @@ import Question from './components/Question'
 import ConsentText from './components/ConsentText'
 import SituationPage from './components/SituationPage'
 import NaviPage from './components/NaviPage'
+import MixPreferencePage from './components/MixPreferencePage'
 import EndPage from './components/EndPage'
+import DemoPage from './components/DemoPage'
 
 function visibleQuestions(pageKey, answers) {
   return PAGES[pageKey].questions.filter((q) => !q.showIf || q.showIf(answers))
@@ -26,6 +28,7 @@ function pruneHidden(answers) {
 }
 
 export default function App() {
+  const demo = typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('demo') === '1'
   const [situationOrder] = useState(newSituationOrder)
   const [identity] = useState(participantIdentity)
   const [startedAt] = useState(() => new Date())
@@ -33,7 +36,22 @@ export default function App() {
   const [naviPlan, setNaviPlan] = useState([])
   const [naviLang, setNaviLang] = useState(null)
   const [index, setIndex] = useState(0)
-  const [answers, setAnswers] = useState({})
+  const [answers, setAnswers] = useState(() =>
+    demo
+      ? {
+          consent: 1,
+          enrolled_scsu: 1,
+          age_18_plus: 1,
+          arrival_month: 8,
+          arrival_year: 2025,
+          participant_group: 0,
+          first_language: 'ne',
+          english_speaking: 3,
+          english_listening: 3,
+          english_reading: 3,
+        }
+      : {},
+  )
   const [ended, setEnded] = useState(null)
   const [response, setResponse] = useState(null)
   const [missing, setMissing] = useState(false)
@@ -43,6 +61,7 @@ export default function App() {
   useEffect(() => {
     loadManifest().then(setManifest)
   }, [])
+
 
   const steps = useMemo(() => buildSteps(situationOrder, naviPlan), [situationOrder, naviPlan])
   const step = steps[index]
@@ -74,7 +93,9 @@ export default function App() {
     setNaviPlan(plan)
     setAnswers((a) => {
       const next = {}
-      for (const [k, v] of Object.entries(a)) if (!k.startsWith('navi_')) next[k] = v
+      for (const [k, v] of Object.entries(a)) {
+        if (!k.startsWith('navi_') && !k.startsWith('mix_')) next[k] = v
+      }
       if (plan.length) {
         next.navi_shown = plan.map((p) => p.situation).join(',')
         plan.forEach((p) => (next[`navi_${p.situation}_order`] = p.order.join(',')))
@@ -103,9 +124,16 @@ export default function App() {
   }
 
   const next = async () => {
+    setMissing(false)
     if (step.kind === 'page') {
       const qs = visibleQuestions(step.key, answers)
-      const unanswered = qs.filter((q) => q.required && answers[q.id] === undefined)
+      // Optional pages (open, contact): only enforce fields marked required.
+      // All other pages: every visible question must be answered to continue.
+      const need =
+        step.key === 'open' || step.key === 'contact'
+          ? qs.filter((q) => q.required)
+          : qs
+      const unanswered = need.filter((q) => answers[q.id] === undefined || answers[q.id] === '')
       if (unanswered.length) {
         setMissing(true)
         return
@@ -117,6 +145,23 @@ export default function App() {
         return
       }
       if (step.key === 'background') await settleNavi(answers.first_language)
+    } else if (step.kind === 'situation') {
+      const missingDims = DIMENSIONS.some((d) => answers[`${step.id}_${d.key}`] === undefined)
+      if (missingDims) {
+        setMissing(true)
+        return
+      }
+    } else if (step.kind === 'navi') {
+      const { situation, order } = step
+      const need = []
+      for (const level of order) {
+        need.push(`navi_${situation}_${level}_understand`, `navi_${situation}_${level}_natural`)
+      }
+      need.push(`navi_${situation}_pref`, `navi_${situation}_use`)
+      if (need.some((id) => answers[id] === undefined)) {
+        setMissing(true)
+        return
+      }
     }
     if (index === steps.length - 1) return finish()
     setIndex(index + 1)
@@ -141,9 +186,27 @@ export default function App() {
     URL.revokeObjectURL(url)
   }
 
+  if (demo) {
+    return (
+      <>
+        <div className="test-banner">Demo mode · no data saved · pending SCSU IRB approval</div>
+        <main className="shell">
+          <section className="card">
+            {manifest ? <DemoPage manifest={manifest} /> : <p className="muted">Loading…</p>}
+          </section>
+          <p className="foot">
+            St. Cloud State University · Department of Computing, Informatics and Data Science
+          </p>
+        </main>
+      </>
+    )
+  }
+
   let body = null
   if (ended) {
     body = <EndPage reason={ended} answers={answers} response={response} onDownload={download} />
+  } else if (step.kind === 'page' && step.key === 'mix') {
+    body = <MixPreferencePage language={naviLang} answers={answers} setAnswer={setAnswer} />
   } else if (step.kind === 'page') {
     const page = PAGES[step.key]
     body = (
@@ -191,7 +254,7 @@ export default function App() {
             <>
               {missing && (
                 <p className="notice" role="alert">
-                  Please answer the questions marked with * to continue.
+                  Please answer every question on this page to continue.
                 </p>
               )}
               <div className="actions">

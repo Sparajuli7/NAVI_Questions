@@ -1,0 +1,31 @@
+{
+  "id": "transit_none_en",
+  "situation": "transit",
+  "level": "none",
+  "language": "en",
+  "script": "latin",
+  "sample": false,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "Excuse me, does this bus go to campus?"
+    },
+    {
+      "speaker": "navi",
+      "text": "Yes, this bus goes straight to the university. It stops right by the main entrance."
+    },
+    {
+      "speaker": "learner",
+      "text": "How much is a single ticket?"
+    },
+    {
+      "speaker": "navi",
+      "text": "A single ride is two dollars. If you need a transfer, ask the driver and it is free."
+    }
+  ],
+  "target_term": "transfer",
+  "mix_ratio": null,
+  "generated_with": "claude-code",
+  "verified_by": null,
+  "verified_on": null
+}

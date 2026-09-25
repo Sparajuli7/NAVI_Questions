@@ -1,0 +1,31 @@
+{
+  "id": "transit_heavy_fr",
+  "situation": "transit",
+  "level": "heavy",
+  "language": "fr",
+  "script": "latin",
+  "sample": false,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "Excuse me, does this bus go to campus?"
+    },
+    {
+      "speaker": "navi",
+      "text": "Oui, ce bus va directement à l'université. Il s'arrête right by the main entrance."
+    },
+    {
+      "speaker": "learner",
+      "text": "How much is a single ticket?"
+    },
+    {
+      "speaker": "navi",
+      "text": "Le trajet simple coûte deux dollars. Si tu as besoin d'un transfer, demande au chauffeur, c'est gratuit."
+    }
+  ],
+  "target_term": "transfer",
+  "mix_ratio": null,
+  "generated_with": "claude-code",
+  "verified_by": null,
+  "verified_on": null
+}

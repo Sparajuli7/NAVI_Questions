@@ -9,9 +9,10 @@ const LEARNER = {
   professor: ['Excuse me, do you have a minute? I did not understand the part about the deadline.', 'So can I submit it on Monday?'],
   ordering: ['Hi, can I get the chicken sandwich?', 'What is a combo?'],
   smalltalk: ['It is really cold today.', 'Is it always like this here?'],
+  transit: ['Excuse me, does this bus go to campus?', 'How much is a single ticket?'],
 }
 
-const TARGET = { clinic: 'dull ache', professor: 'extension', ordering: 'combo', smalltalk: 'I know, right?' }
+const TARGET = { clinic: 'dull ache', professor: 'extension', ordering: 'combo', smalltalk: 'I know, right?', transit: 'transfer' }
 
 const ENGLISH = {
   clinic: ['Okay, thank you for telling me. Is the pain sharp, or more like a dull ache?',
@@ -22,6 +23,10 @@ const ENGLISH = {
     'It means the sandwich, fries and a drink together for one price. It is usually cheaper.'],
   smalltalk: ['I know, right? I was not ready for it. Did you just move here?',
     'Honestly, this is nothing. Wait until January. You will want a real winter coat.'],
+  transit: [
+    'Yes, this bus goes straight to the university. It stops right by the main entrance.',
+    'A single ride is two dollars. If you need a transfer, ask the driver and it is free.',
+  ],
 }
 
 // [language]: { script, [situation]: { light: [n1, n2], heavy: [n1, n2] } }
@@ -52,33 +57,45 @@ const MIXED = {
       heavy: ['I know, right? No estaba listo para esto. ¿Te acabas de mudar aquí?',
         'La verdad, esto no es nada. Espera hasta enero. You will want a real winter coat.'],
     },
+    transit: {
+      light: ['Yes, este autobús goes straight to the university. Para right by the main entrance.',
+        'A single ride cuesta dos dólares. If you need a transfer, ask the driver and it is free.'],
+      heavy: ['Sí, este autobús va directo a la universidad. Se para right by the main entrance.',
+        'El pasaje cuesta dos dólares. Si necesitas un transfer, pregúntale al conductor, es gratis.'],
+    },
   },
 
   fr: {
     script: 'latin',
     clinic: {
-      light: ['Okay, merci de me le dire. Is the pain sharp, or more like a dull ache?',
-        'It is probably not serious, mais je veux vérifier. Drink water, rest, and come back if the pain gets worse or you get de la fièvre.'],
-      heavy: ['D’accord, merci de me le dire. La douleur est aiguë, ou plutôt comme un dull ache ?',
-        'Ce n’est probablement pas grave, mais je veux vérifier. Buvez de l’eau, reposez-vous, and come back if the pain gets worse or you get a fever.'],
+      light: ["Okay, merci de me le dire. Is the pain sharp, or more like a dull ache?",
+        "It is probably not serious, mais je veux vérifier. Drink water, rest, and come back if the pain gets worse or you get de la fièvre."],
+      heavy: ["D\u2019accord, merci de me le dire. La douleur est aiguë, ou plutôt comme un dull ache ?",
+        "Ce n\u2019est probablement pas grave, mais je veux vérifier. Buvez de l\u2019eau, reposez-vous, and come back if the pain gets worse or you get a fever."],
     },
     professor: {
-      light: ['Of course. The paper is due Friday à minuit, but you can ask for an extension if you need one.',
-        'Only if you email me avant vendredi and ask for an extension. Just explain why, and I will usually say yes.'],
-      heavy: ['Bien sûr. Le devoir est à rendre vendredi à minuit, but you can ask for an extension si vous en avez besoin.',
-        'Seulement si vous m’envoyez un e-mail avant vendredi and ask for an extension. Expliquez-moi pourquoi, et en général je dis oui.'],
+      light: ["Of course. The paper is due Friday à minuit, but you can ask for an extension if you need one.",
+        "Only if you email me avant vendredi and ask for an extension. Just explain why, and I will usually say yes."],
+      heavy: ["Bien sûr. Le devoir est à rendre vendredi à minuit, but you can ask for an extension si vous en avez besoin.",
+        "Seulement si vous m\u2019envoyez un e-mail avant vendredi and ask for an extension. Expliquez-moi pourquoi, et en général je dis oui."],
     },
     ordering: {
-      light: ['Sure. Do you want that as a combo, avec des frites et une boisson ?',
-        'It means the sandwich, fries and a drink ensemble, for one price. It is usually moins cher.'],
-      heavy: ['Bien sûr. Vous le voulez en combo, avec des frites et une boisson ?',
-        'Un combo, c’est le sandwich, les frites et la boisson ensemble pour un seul prix. Usually it is cheaper.'],
+      light: ["Sure. Do you want that as a combo, avec des frites et une boisson ?",
+        "It means the sandwich, fries and a drink ensemble, for one price. It is usually moins cher."],
+      heavy: ["Bien sûr. Vous le voulez en combo, avec des frites et une boisson ?",
+        "Un combo, c\u2019est le sandwich, les frites et la boisson ensemble pour un seul prix. Usually it is cheaper."],
     },
     smalltalk: {
-      light: ['I know, right? Je n’étais pas prêt. Did you just move here?',
-        'Honestly, ce n’est rien. Wait until January. You will want a real winter coat.'],
-      heavy: ['I know, right? Je n’étais pas prêt pour ça. Tu viens d’arriver ici ?',
-        'Franchement, ce n’est rien. Attends janvier. You will want a real winter coat.'],
+      light: ["I know, right? Je n\u2019étais pas prêt. Did you just move here?",
+        "Honestly, ce n\u2019est rien. Wait until January. You will want a real winter coat."],
+      heavy: ["I know, right? Je n\u2019étais pas prêt pour ça. Tu viens d\u2019arriver ici ?",
+        "Franchement, ce n\u2019est rien. Attends janvier. You will want a real winter coat."],
+    },
+    transit: {
+      light: ["Yes, ce bus goes straight to the university. Il s'arrête right by the main entrance.",
+        "A single ride costs deux dollars. If you need a transfer, demandez au chauffeur and it is free."],
+      heavy: ["Oui, ce bus va directement à l'université. Il s'arrête right by the main entrance.",
+        "Le trajet simple coûte deux dollars. Si tu as besoin d'un transfer, demande au chauffeur, c'est gratuit."],
     },
   },
 
@@ -108,6 +125,12 @@ const MIXED = {
       heavy: ['I know, right? Darauf war ich echt nicht vorbereitet. Bist du gerade erst hergezogen?',
         'Ehrlich gesagt ist das noch gar nichts. Warte mal bis Januar. You will want a real winter coat.'],
     },
+    transit: {
+      light: ['Yes, dieser Bus fährt direkt zur Uni. It stops right by the main entrance.',
+        'A single ride costs zwei Dollar. If you need a transfer, ask the driver and it is free.'],
+      heavy: ['Ja, dieser Bus fährt direkt zur Universität. Er hält right by the main entrance.',
+        'Eine Einzelfahrt kostet zwei Dollar. Wenn du einen transfer brauchst, frag den Fahrer — das ist kostenlos.'],
+    },
   },
 
   ru: {
@@ -135,6 +158,12 @@ const MIXED = {
         'Honestly, это ещё ничего. Wait until January. You will want a real winter coat.'],
       heavy: ['I know, right? Я вообще не был к этому готов. Ты только переехал сюда?',
         'Честно, это ещё ничего. Подожди до января. You will want a real winter coat.'],
+    },
+    transit: {
+      light: ['Yes, этот автобус goes straight to the university. It stops right by the main entrance.',
+        'A single ride costs два доллара. If you need a transfer, ask the driver and it is free.'],
+      heavy: ['Да, этот автобус едет прямо до университета. Останавливается right by the main entrance.',
+        'Одна поездка стоит два доллара. Если нужен transfer, скажи водителю — это бесплатно.'],
     },
   },
 
@@ -164,6 +193,12 @@ const MIXED = {
       heavy: ['I know, right? 全然心の準備ができてなかったよ。最近ここに引っ越してきたの？',
         '正直、これはまだ序の口だよ。1月まで待ってみて。You will want a real winter coat.'],
     },
+    transit: {
+      light: ['Yes, このバスはキャンパスまで goes straight. It stops right by the main entrance.',
+        'A single ride is 二ドルです。If you need a transfer, ask the driver and it is free.'],
+      heavy: ['はい、このバスはキャンパスまで直行します。Right by the main entrance で降りてください。',
+        '片道は二ドルです。Transfer が必要なら運転手に聞いてください、無料です。'],
+    },
   },
 
   ko: {
@@ -191,6 +226,12 @@ const MIXED = {
         'Honestly, 이건 아무것도 아니야. Wait until January. You will want a real winter coat.'],
       heavy: ['I know, right? 진짜 마음의 준비가 안 됐었어. 여기 이사 온 지 얼마 안 됐어?',
         '솔직히 이건 아무것도 아니야. 1월까지 기다려 봐. You will want a real winter coat.'],
+    },
+    transit: {
+      light: ['Yes, 이 버스가 캠퍼스까지 goes straight. It stops right by the main entrance.',
+        'A single ride는 2달러예요. If you need a transfer, ask the driver and it is free.'],
+      heavy: ['네, 이 버스가 캠퍼스까지 바로 가요. Right by the main entrance 에서 내리면 돼요.',
+        '편도 요금은 2달러예요. Transfer 가 필요하면 기사님한테 말하세요, 무료예요.'],
     },
   },
 
@@ -220,6 +261,12 @@ const MIXED = {
       heavy: ['I know, right? 我完全没做好心理准备。你是刚搬来的吗？',
         '说实话，这还不算什么。等到一月份吧。You will want a real winter coat.'],
     },
+    transit: {
+      light: ['Yes, 这辆公交 goes straight to the university. It stops right by the main entrance.',
+        'A single ride costs 两美元. If you need a transfer, ask the driver and it is free.'],
+      heavy: ['是的，这辆公交直接到大学。在 main entrance 附近停靠。',
+        '单程票价是两美元。如果你需要 transfer，跟司机说，是免费的。'],
+    },
   },
 
   hi: {
@@ -247,6 +294,12 @@ const MIXED = {
         'Honestly, ये तो कुछ भी नहीं है। Wait until January. You will want a real winter coat.'],
       heavy: ['I know, right? मैं तो बिल्कुल तैयार नहीं था। तुम अभी-अभी यहाँ आए हो क्या?',
         'सच कहूँ तो ये कुछ भी नहीं है। जनवरी तक रुको। You will want a real winter coat.'],
+    },
+    transit: {
+      light: ['Yes, यह बस कैंपस तक goes straight. It stops right by the main entrance.',
+        'A single ride दो डॉलर है। If you need a transfer, ask the driver and it is free.'],
+      heavy: ['हाँ, यह बस सीधे यूनिवर्सिटी तक जाती है। Main entrance के पास रुकती है।',
+        'एक सफर दो डॉलर है। Transfer चाहिए तो ड्राइवर से पूछें, यह मुफ्त है।'],
     },
   },
 
@@ -276,6 +329,46 @@ const MIXED = {
       heavy: ['I know, right? म त पटक्कै तयार थिइनँ। तिमी भर्खरै यहाँ सरेको हो?',
         'साँचो भन्नुपर्दा यो त केही पनि होइन। जनवरीसम्म पर्ख। You will want a real winter coat.'],
     },
+    transit: {
+      light: ['Yes, यो बस क्याम्पससम्म goes straight. It stops right by the main entrance.',
+        'A single ride दुई डलर हो। If you need a transfer, ask the driver and it is free.'],
+      heavy: ['हो, यो बस सिधा विश्वविद्यालयसम्म जान्छ। Main entrance नजिक रोकिन्छ।',
+        'एकतर्फी भाडा दुई डलर छ। Transfer चाहिएमा driver लाई सोध्नुस्, निःशुल्क छ।'],
+    },
+  },
+
+  ha: {
+    script: 'latin',
+    clinic: {
+      light: ['Okay, na gode da faɗin haka. Is the pain sharp, or more like a dull ache?',
+        'It is probably not serious, amma ina son duba. Drink water, rest, and come back if the pain gets worse ko zazzaɓi ya zo.'],
+      heavy: ['To, na gode da faɗin haka. Ciwo yana kaifi, ko yana kama da dull ache?',
+        'Da alama ba mai tsanani ba ne, amma ina son duba. Sha ruwa, huta, and come back if the pain gets worse or you get a fever.'],
+    },
+    professor: {
+      light: ['Of course. The paper is due Friday da tsakar dare, but you can ask for an extension if you need one.',
+        'Only if you email me kafin Juma\'a and ask for an extension. Just explain why, and I will usually say yes.'],
+      heavy: ['Tabbas. Takarda ta ƙare Juma\'a da tsakar dare, but you can ask for an extension idan kana buƙata.',
+        'Sai dai in ka aika mini email kafin Juma\'a and ask for an extension. Ka bayyana dalilin, kuma galibi ina cewa eh.'],
+    },
+    ordering: {
+      light: ['Sure. Do you want that as a combo, da fries da abin sha?',
+        'It means the sandwich, fries and a drink tare, for one price. It is usually mai arha.'],
+      heavy: ['To. Kana son shi a matsayin combo, da fries da abin sha?',
+        'Combo yana nufin sandwich, fries da abin sha tare da farashi guda ɗaya. Usually it is cheaper.'],
+    },
+    smalltalk: {
+      light: ['I know, right? Ban kasance a shirye ba. Did you just move here?',
+        'Honestly, ba komai ba ne wannan. Wait until January. You will want a real winter coat.'],
+      heavy: ['I know, right? Ban kasance a shirye gaskiya ba. Yanzu ne ka ƙaura zuwa nan?',
+        'Gaskiya, ba komai ba ne wannan. Jira har Janairu. You will want a real winter coat.'],
+    },
+    transit: {
+      light: ['Yes, wannan bas yana tafiya straight to the university. It stops right by the main entrance.',
+        'A single ride is dala biyu. If you need a transfer, ask the driver and it is free.'],
+      heavy: ['Ee, wannan bas yana tafiya kai tsaye zuwa jami\'a. Yana tsayawa right by the main entrance.',
+        'Tikitin guda ɗaya dala biyu ne. Idan kana buƙatar transfer, tambayi direban, kyauta ne.'],
+    },
   },
 }
 
@@ -289,7 +382,7 @@ function write(sit, level, language, script, navi) {
   const [l1, l2] = LEARNER[sit]
   const file = {
     id, situation: sit, level, language, script,
-    sample: true,
+    sample: false,
     turns: [
       { speaker: 'learner', text: l1 },
       { speaker: 'navi', text: navi[0] },
@@ -298,7 +391,7 @@ function write(sit, level, language, script, navi) {
     ],
     target_term: TARGET[sit],
     mix_ratio: null,
-    generated_with: 'hand-written sample, replace with NAVI output',
+    generated_with: 'claude-code',
     verified_by: null,
     verified_on: null,
   }

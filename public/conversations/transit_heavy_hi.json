@@ -1,0 +1,31 @@
+{
+  "id": "transit_heavy_hi",
+  "situation": "transit",
+  "level": "heavy",
+  "language": "hi",
+  "script": "devanagari",
+  "sample": false,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "Excuse me, does this bus go to campus?"
+    },
+    {
+      "speaker": "navi",
+      "text": "हाँ, यह बस सीधे यूनिवर्सिटी तक जाती है। Main entrance के पास रुकती है।"
+    },
+    {
+      "speaker": "learner",
+      "text": "How much is a single ticket?"
+    },
+    {
+      "speaker": "navi",
+      "text": "एक सफर दो डॉलर है। Transfer चाहिए तो ड्राइवर से पूछें, यह मुफ्त है।"
+    }
+  ],
+  "target_term": "transfer",
+  "mix_ratio": null,
+  "generated_with": "claude-code",
+  "verified_by": null,
+  "verified_on": null
+}

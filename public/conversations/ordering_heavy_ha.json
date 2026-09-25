@@ -1,0 +1,31 @@
+{
+  "id": "ordering_heavy_ha",
+  "situation": "ordering",
+  "level": "heavy",
+  "language": "ha",
+  "script": "latin",
+  "sample": false,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "Hi, can I get the chicken sandwich?"
+    },
+    {
+      "speaker": "navi",
+      "text": "To. Kana son shi a matsayin combo, da fries da abin sha?"
+    },
+    {
+      "speaker": "learner",
+      "text": "What is a combo?"
+    },
+    {
+      "speaker": "navi",
+      "text": "Combo yana nufin sandwich, fries da abin sha tare da farashi guda ɗaya. Usually it is cheaper."
+    }
+  ],
+  "target_term": "combo",
+  "mix_ratio": null,
+  "generated_with": "claude-code",
+  "verified_by": null,
+  "verified_on": null
+}

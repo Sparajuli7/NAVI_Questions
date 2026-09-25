@@ -1,0 +1,31 @@
+{
+  "id": "professor_heavy_ha",
+  "situation": "professor",
+  "level": "heavy",
+  "language": "ha",
+  "script": "latin",
+  "sample": false,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "Excuse me, do you have a minute? I did not understand the part about the deadline."
+    },
+    {
+      "speaker": "navi",
+      "text": "Tabbas. Takarda ta ƙare Juma'a da tsakar dare, but you can ask for an extension idan kana buƙata."
+    },
+    {
+      "speaker": "learner",
+      "text": "So can I submit it on Monday?"
+    },
+    {
+      "speaker": "navi",
+      "text": "Sai dai in ka aika mini email kafin Juma'a and ask for an extension. Ka bayyana dalilin, kuma galibi ina cewa eh."
+    }
+  ],
+  "target_term": "extension",
+  "mix_ratio": null,
+  "generated_with": "claude-code",
+  "verified_by": null,
+  "verified_on": null
+}

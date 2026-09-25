@@ -1,0 +1,31 @@
+{
+  "id": "transit_heavy_ne",
+  "situation": "transit",
+  "level": "heavy",
+  "language": "ne",
+  "script": "devanagari",
+  "sample": false,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "Excuse me, does this bus go to campus?"
+    },
+    {
+      "speaker": "navi",
+      "text": "हो, यो बस सिधा विश्वविद्यालयसम्म जान्छ। Main entrance नजिक रोकिन्छ।"
+    },
+    {
+      "speaker": "learner",
+      "text": "How much is a single ticket?"
+    },
+    {
+      "speaker": "navi",
+      "text": "एकतर्फी भाडा दुई डलर छ। Transfer चाहिएमा driver लाई सोध्नुस्, निःशुल्क छ।"
+    }
+  ],
+  "target_term": "transfer",
+  "mix_ratio": null,
+  "generated_with": "claude-code",
+  "verified_by": null,
+  "verified_on": null
+}

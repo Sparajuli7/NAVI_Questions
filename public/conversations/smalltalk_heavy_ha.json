@@ -1,0 +1,31 @@
+{
+  "id": "smalltalk_heavy_ha",
+  "situation": "smalltalk",
+  "level": "heavy",
+  "language": "ha",
+  "script": "latin",
+  "sample": false,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "It is really cold today."
+    },
+    {
+      "speaker": "navi",
+      "text": "I know, right? Ban kasance a shirye gaskiya ba. Yanzu ne ka ƙaura zuwa nan?"
+    },
+    {
+      "speaker": "learner",
+      "text": "Is it always like this here?"
+    },
+    {
+      "speaker": "navi",
+      "text": "Gaskiya, ba komai ba ne wannan. Jira har Janairu. You will want a real winter coat."
+    }
+  ],
+  "target_term": "I know, right?",
+  "mix_ratio": null,
+  "generated_with": "claude-code",
+  "verified_by": null,
+  "verified_on": null
+}

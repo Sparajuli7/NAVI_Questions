@@ -97,6 +97,7 @@ What is your first language?
 - [ ] Chinese (Mandarin) *(stored value: `zh`)*
 - [ ] French *(stored value: `fr`)*
 - [ ] German *(stored value: `de`)*
+- [ ] Hausa *(stored value: `ha`)*
 - [ ] Hindi *(stored value: `hi`)*
 - [ ] Japanese *(stored value: `ja`)*
 - [ ] Korean *(stored value: `ko`)*
@@ -795,11 +796,40 @@ If NAVI talked to you like the version you chose, would you use it to practice b
 - [ ] Maybe
 - [ ] Yes
 
+## Page: How much of your language in the tool?
+
+_Below is the same short clinic practice shown three ways — almost no mixing, a little, and mostly your language. Look at them, then tell us how much of your first language you would want in the tool._
+
+_This page shows three live clinic previews (Almost none / A little / Mostly my language) as app-style input/output chats, then asks the preference question._
+
+### Q60. `mix_preference`
+
+How much of your first language do you want in the tool?
+
+**Type:** single
+
+- [ ] Almost none
+- [ ] A little
+- [ ] About half
+- [ ] Mostly my language
+- [ ] Not sure
+- [ ] Other
+
+### Q61. `mix_preference_other`
+
+Describe how much mixing you want
+
+*Shown only when a prior answer matches the survey logic.*
+
+**Type:** text
+
+*(open text)*
+
 ## Page: If something like NAVI existed
 
 _A few questions about what would actually be useful to you. There are no right answers._
 
-### Q60. `practice_situations`
+### Q62. `practice_situations`
 
 Which of these would you actually open an app to practice?
 
@@ -819,7 +849,7 @@ Which of these would you actually open an app to practice?
 - [ ] Following humor, sarcasm or slang in a group
 - [ ] None of these
 
-### Q61. `practice_mode`
+### Q63. `practice_mode`
 
 How would you want to practice?
 
@@ -830,7 +860,7 @@ How would you want to practice?
 - [ ] Both
 - [ ] Not sure
 
-### Q62. `practice_when`
+### Q64. `practice_when`
 
 When would help be most useful?
 
@@ -841,7 +871,43 @@ When would help be most useful?
 - [ ] Both
 - [ ] Neither
 
-### Q63. `would_pay`
+### Q65. `pain_points`
+
+What gets in the way most when you have to use English in real life?
+
+*Choose every one that applies.*
+
+**Type:** multi
+
+- [ ] I get stuck for a word
+- [ ] I am afraid of looking stupid
+- [ ] I cannot practice before the real situation
+- [ ] I do not understand what people say back
+- [ ] I am too nervous to speak
+- [ ] I do not have time to practice
+- [ ] Other
+
+### Q66. `pain_points_other`
+
+What else gets in the way?
+
+*Shown only when a prior answer matches the survey logic.*
+
+**Type:** text
+
+*(open text)*
+
+### Q67. `irresistible_text`
+
+What would make you actually open this every week?
+
+*Be specific. There is no wrong answer.*
+
+**Type:** longtext
+
+*(open text)*
+
+### Q68. `would_pay`
 
 Would you pay for an app like this?
 
@@ -851,7 +917,7 @@ Would you pay for an app like this?
 - [ ] Maybe
 - [ ] Yes
 
-### Q64. `pay_amount`
+### Q69. `pay_amount`
 
 What is the most you would pay per month?
 
@@ -867,7 +933,7 @@ What is the most you would pay per month?
 
 ## Page: When it goes wrong
 
-### Q65. `coping`
+### Q70. `coping`
 
 When you get stuck in one of those situations, what do you usually do?
 
@@ -882,7 +948,7 @@ When you get stuck in one of those situations, what do you usually do?
 - [ ] Push through and hope for the best
 - [ ] Avoid the situation next time
 
-### Q66. `tools_used`
+### Q71. `tools_used`
 
 What do you use now to help with English?
 
@@ -897,7 +963,7 @@ What do you use now to help with English?
 - [ ] A person I know
 - [ ] Nothing
 
-### Q67. `tools_freq`
+### Q72. `tools_freq`
 
 How often do you use those?
 
@@ -913,7 +979,7 @@ How often do you use those?
 
 _Both questions are optional._
 
-### Q68. `incident_text`
+### Q73. `incident_text`
 
 Think of one time in the last month when language got in the way. What happened?
 
@@ -923,7 +989,7 @@ Think of one time in the last month when language got in the way. What happened?
 
 *(open text)*
 
-### Q69. `wish_text`
+### Q74. `wish_text`
 
 Is there anything you wish existed that would have helped?
 
@@ -937,7 +1003,7 @@ _Stored only in the contact survey. Fields: `contact_email`, `interview_ok`, `be
 
 _These are optional. Anything here is stored separately from your answers and deleted when the study ends._
 
-### Q70. `interview_ok`
+### Q75. `interview_ok`
 
 Would you be willing to talk for 30 to 45 minutes about this?
 
@@ -946,7 +1012,7 @@ Would you be willing to talk for 30 to 45 minutes about this?
 - [ ] Yes
 - [ ] No
 
-### Q71. `beta_ok`
+### Q76. `beta_ok`
 
 Would you be willing to try an early version of NAVI later this year?
 
@@ -955,7 +1021,7 @@ Would you be willing to try an early version of NAVI later this year?
 - [ ] Yes
 - [ ] No
 
-### Q72. `contact_email`
+### Q77. `contact_email`
 
 What is the best email to reach you at?
 
@@ -1065,9 +1131,23 @@ navi_smalltalk_heavy_understand
 navi_smalltalk_heavy_natural
 navi_smalltalk_pref
 navi_smalltalk_use
+navi_transit_order
+navi_transit_none_understand
+navi_transit_none_natural
+navi_transit_light_understand
+navi_transit_light_natural
+navi_transit_heavy_understand
+navi_transit_heavy_natural
+navi_transit_pref
+navi_transit_use
+mix_preference
+mix_preference_other
 practice_situations
 practice_mode
 practice_when
+pain_points
+pain_points_other
+irresistible_text
 would_pay
 pay_amount
 coping

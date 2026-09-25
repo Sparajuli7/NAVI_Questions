@@ -1,0 +1,31 @@
+{
+  "id": "ordering_light_ha",
+  "situation": "ordering",
+  "level": "light",
+  "language": "ha",
+  "script": "latin",
+  "sample": false,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "Hi, can I get the chicken sandwich?"
+    },
+    {
+      "speaker": "navi",
+      "text": "Sure. Do you want that as a combo, da fries da abin sha?"
+    },
+    {
+      "speaker": "learner",
+      "text": "What is a combo?"
+    },
+    {
+      "speaker": "navi",
+      "text": "It means the sandwich, fries and a drink tare, for one price. It is usually mai arha."
+    }
+  ],
+  "target_term": "combo",
+  "mix_ratio": null,
+  "generated_with": "claude-code",
+  "verified_by": null,
+  "verified_on": null
+}

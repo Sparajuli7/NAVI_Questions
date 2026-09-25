@@ -1,0 +1,31 @@
+{
+  "id": "transit_heavy_ru",
+  "situation": "transit",
+  "level": "heavy",
+  "language": "ru",
+  "script": "cyrillic",
+  "sample": false,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "Excuse me, does this bus go to campus?"
+    },
+    {
+      "speaker": "navi",
+      "text": "Да, этот автобус едет прямо до университета. Останавливается right by the main entrance."
+    },
+    {
+      "speaker": "learner",
+      "text": "How much is a single ticket?"
+    },
+    {
+      "speaker": "navi",
+      "text": "Одна поездка стоит два доллара. Если нужен transfer, скажи водителю — это бесплатно."
+    }
+  ],
+  "target_term": "transfer",
+  "mix_ratio": null,
+  "generated_with": "claude-code",
+  "verified_by": null,
+  "verified_on": null
+}

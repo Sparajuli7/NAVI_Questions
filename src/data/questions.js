@@ -51,6 +51,7 @@ export const LANGUAGES = [
   { code: 'zh', label: 'Chinese (Mandarin)' },
   { code: 'fr', label: 'French' },
   { code: 'de', label: 'German' },
+  { code: 'ha', label: 'Hausa' },
   { code: 'hi', label: 'Hindi' },
   { code: 'ja', label: 'Japanese' },
   { code: 'ko', label: 'Korean' },
@@ -61,13 +62,33 @@ export const LANGUAGES = [
 ]
 
 // Block 14
-export const NAVI_SITUATIONS = ['clinic', 'professor', 'ordering', 'smalltalk']
+export const NAVI_SITUATIONS = ['clinic', 'professor', 'ordering', 'smalltalk', 'transit']
 export const NAVI_LEVELS = ['none', 'light', 'heavy']
-export const NAVI_PER_PERSON = 2
+/** At most 4 situations with conversation files; keep ≤5 for the instrument. */
+export const NAVI_PER_PERSON = 3
 
 export const NAVI_UNDERSTAND = ['Not at all', 'A little', 'Somewhat', 'Mostly', 'Completely']
 export const NAVI_NATURAL = ['Not at all natural', 'Slightly', 'Somewhat', 'Mostly', 'Completely natural']
 export const NAVI_USE = ['No', 'Maybe', 'Yes']
+
+export const MIX_PREFERENCE = [
+  'Almost none',
+  'A little',
+  'About half',
+  'Mostly my language',
+  'Not sure',
+  'Other',
+]
+
+export const PAIN_POINTS = [
+  'I get stuck for a word',
+  'I am afraid of looking stupid',
+  'I cannot practice before the real situation',
+  'I do not understand what people say back',
+  'I am too nervous to speak',
+  'I do not have time to practice',
+  'Other',
+]
 
 const YESNO = ['Yes', 'No'] // stored as 1 / 0, see yesNo()
 
@@ -155,6 +176,16 @@ export const PAGES = {
           'Both',
           'Neither',
         ] },
+      { id: 'pain_points', type: 'multi',
+        label: 'What gets in the way most when you have to use English in real life?',
+        help: 'Choose every one that applies.',
+        options: PAIN_POINTS },
+      { id: 'pain_points_other', type: 'text',
+        label: 'What else gets in the way?',
+        showIf: (a) => Array.isArray(a.pain_points) && a.pain_points.includes(PAIN_POINTS.indexOf('Other')) },
+      { id: 'irresistible_text', type: 'longtext',
+        label: 'What would make you actually open this every week?',
+        help: 'Be specific. There is no wrong answer.' },
       { id: 'would_pay', type: 'single',
         label: 'Would you pay for an app like this?',
         options: ['No, only if it were free', 'Maybe', 'Yes'] },
@@ -162,6 +193,20 @@ export const PAGES = {
         label: 'What is the most you would pay per month?',
         options: ['Less than $3', '$3 to $5', '$5 to $10', '$10 to $15', 'More than $15'],
         showIf: (a) => a.would_pay === 1 || a.would_pay === 2 },
+    ],
+  },
+
+  mix: {
+    title: 'How much of your language in the tool?',
+    intro:
+      'Below is the same short clinic practice shown three ways — almost no mixing, a little, and mostly your language. Look at them, then tell us how much of your first language you would want in the tool.',
+    questions: [
+      { id: 'mix_preference', type: 'single',
+        label: 'How much of your first language do you want in the tool?',
+        options: MIX_PREFERENCE },
+      { id: 'mix_preference_other', type: 'text',
+        label: 'Describe how much mixing you want',
+        showIf: (a) => a.mix_preference === MIX_PREFERENCE.indexOf('Other') },
     ],
   },
 
@@ -242,7 +287,7 @@ export function allFieldIds() {
     })
     ids.push(`navi_${s}_pref`, `navi_${s}_use`)
   })
-  for (const key of ['product', 'coping', 'open']) {
+  for (const key of ['mix', 'product', 'coping', 'open']) {
     PAGES[key].questions.forEach((q) => ids.push(q.id))
   }
   ids.push('situation_order', 'participant_id', 'play_number', 'started_at', 'completed_at', 'duration_sec')

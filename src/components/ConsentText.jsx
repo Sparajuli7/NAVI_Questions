@@ -33,8 +33,8 @@ export default function ConsentText() {
         Answer questions on your own device. It takes about 10 to 13 minutes. You may also see
         short example exchanges for a few situations: what someone might say (input) and how an
         AI practice partner might reply (output). These examples are fixed text shown only as a
-        visual aid. Nothing you type is sent to any AI system. You can skip any question and
-        stop at any time by closing the page.
+        visual aid. Nothing you type is sent to any AI system. You need to answer each question
+        to continue. You can stop at any time by closing the page.
       </p>
 
       <h2>Risks and benefits</h2>

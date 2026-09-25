@@ -1,0 +1,31 @@
+{
+  "id": "transit_heavy_ja",
+  "situation": "transit",
+  "level": "heavy",
+  "language": "ja",
+  "script": "japanese",
+  "sample": false,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "Excuse me, does this bus go to campus?"
+    },
+    {
+      "speaker": "navi",
+      "text": "はい、このバスはキャンパスまで直行します。Right by the main entrance で降りてください。"
+    },
+    {
+      "speaker": "learner",
+      "text": "How much is a single ticket?"
+    },
+    {
+      "speaker": "navi",
+      "text": "片道は二ドルです。Transfer が必要なら運転手に聞いてください、無料です。"
+    }
+  ],
+  "target_term": "transfer",
+  "mix_ratio": null,
+  "generated_with": "claude-code",
+  "verified_by": null,
+  "verified_on": null
+}

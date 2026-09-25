@@ -42,6 +42,7 @@ export function buildSteps(situationOrder, naviPlan) {
     { kind: 'page', key: 'background' },
     ...situationOrder.map((id) => ({ kind: 'situation', id })),
     ...naviPlan.map((p) => ({ kind: 'navi', ...p })),
+    ...(naviPlan.length ? [{ kind: 'page', key: 'mix' }] : []),
     { kind: 'page', key: 'product' },
     { kind: 'page', key: 'coping' },
     { kind: 'page', key: 'open' },

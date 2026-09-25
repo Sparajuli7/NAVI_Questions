@@ -237,13 +237,19 @@ function instrumentBody({ exampleOnly }) {
     )
   }
 
-  // Product, coping, open
-  for (const key of ['product', 'coping', 'open']) {
+  // Product, mix, coping, open
+  for (const key of ['mix', 'product', 'coping', 'open']) {
     const page = PAGES[key]
     lines.push(`## Page: ${page.title}`)
     lines.push('')
     if (page.intro) {
       lines.push(`_${page.intro}_`)
+      lines.push('')
+    }
+    if (key === 'mix') {
+      lines.push(
+        '_This page shows three live clinic previews (Almost none / A little / Mostly my language) as app-style input/output chats, then asks the preference question._',
+      )
       lines.push('')
     }
     for (const q of page.questions) lines.push(formatQuestion(q, ++qn))

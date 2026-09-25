@@ -1,0 +1,31 @@
+{
+  "id": "transit_light_ko",
+  "situation": "transit",
+  "level": "light",
+  "language": "ko",
+  "script": "hangul",
+  "sample": false,
+  "turns": [
+    {
+      "speaker": "learner",
+      "text": "Excuse me, does this bus go to campus?"
+    },
+    {
+      "speaker": "navi",
+      "text": "Yes, 이 버스가 캠퍼스까지 goes straight. It stops right by the main entrance."
+    },
+    {
+      "speaker": "learner",
+      "text": "How much is a single ticket?"
+    },
+    {
+      "speaker": "navi",
+      "text": "A single ride는 2달러예요. If you need a transfer, ask the driver and it is free."
+    }
+  ],
+  "target_term": "transfer",
+  "mix_ratio": null,
+  "generated_with": "claude-code",
+  "verified_by": null,
+  "verified_on": null
+}
